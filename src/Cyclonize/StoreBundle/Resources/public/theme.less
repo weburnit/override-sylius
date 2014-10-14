@@ -1,0 +1,110 @@
+//
+// Helpters
+// --------------------------------------------------
+
+.bold { font-weight: 700; }
+.light { font-weight: 300; }
+.normal { font-weight: 400; }
+
+.upper { text-transform: uppercase; }
+.underline { text-decoration: underline; }
+
+.text-overflow {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+//
+//
+// --------------------------------------------------
+
+p { margin-bottom: 0; }
+
+//
+// Buttons
+// --------------------------------------------------
+
+.btn {
+    border: none;
+    font-weight: bold;
+    transition: all ease-out 250ms;
+}
+
+.btn-white {
+    .button-variant(#333; #fff; #fff);
+}
+
+.btn-facebook {
+    .button-variant(#fff; #4255B6; #4255B6);
+}
+
+.button-variant(@color; @background; @border) {
+    color: @color;
+    background-color: @background !important;
+    border-color: @border;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open .dropdown-toggle& {
+        color: @color !important;
+        background-color: lighten(@background, 15%) !important;
+    }
+
+    &:active,
+    &.active,
+    .open .dropdown-toggle& {
+        background-image: none !important;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: @background !important;
+            border-color: @border;
+        }
+    }
+
+    .badge {
+        color: @background !important;
+        background-color: @color !important;
+    }
+
+    &.outline,
+    &.btn-outline {
+        color: @background;
+        background-color: transparent !important;
+        border: solid 1px @background;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background: @background !important;
+        }
+    }
+
+}
+
+//
+// Form
+// --------------------------------------------------
+.form-control {
+    &:focus,
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.jumbotron p {
+    font-size: 16px;
+    font-weight: 400;
+}

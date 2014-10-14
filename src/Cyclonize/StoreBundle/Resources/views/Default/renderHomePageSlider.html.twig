@@ -1,0 +1,19 @@
+<div id="home-carousel" class="carousel slide" data-ride="carousel" data-interval="30000">
+    <div class="carousel-inner">
+        {% set index = 0 %}
+        {% for banner in galleries %}
+        {% set index = index + 1 %}
+        {{ include("CyclonizeStoreBundle:Default:"~banner.getKind~"Banner.html.twig",{'active': index, 'banner': banner}) }}
+        {%  endfor %}
+    </div>
+    <!-- /.carousel-inner -->
+
+    <a class="left carousel-control" href="#home-carousel" role="button" data-slide="prev">
+        <span class="fa fa-chevron-left"></span>
+    </a>
+
+    <a class="right carousel-control" href="#home-carousel" role="button" data-slide="next">
+        <span class="fa fa-chevron-right"></span>
+    </a>
+
+</div>

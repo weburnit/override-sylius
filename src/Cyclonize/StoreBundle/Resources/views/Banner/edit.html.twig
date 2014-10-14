@@ -1,0 +1,36 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% from 'SyliusResourceBundle:Macros:actions.html.twig' import update %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('administration_banner') }}">{{ 'Banners'|trans }}</a></li>
+        <li>{{ 'Creating Banner'|trans }}</li>
+    </ol>
+{% endblock %}
+
+{% block content -%}
+    <div class="page-header">
+        <h1><i class="glyphicon glyphicon-plus-sign"></i> {{ 'Creating Banner'|trans|raw }}</h1>
+    </div>
+
+
+    {{ form_errors(edit_form) }}
+
+    <form action="{{ path('administration_banner_update', {'id': entity.getId}) }}" method="POST" class="form-horizontal" {{ form_enctype(edit_form) }} novalidate>
+        {% form_theme edit_form 'SyliusWebBundle::forms.html.twig' %}
+
+        <fieldset>
+            {{ form_row(edit_form.name, {'attr': {'class': 'input-lg'}}) }}
+            {{ form_row(edit_form.url, {'attr': {'class': 'input-lg'} }) }}
+            {{ form_row(edit_form.type, {'attr': {'class': 'input-lg'} }) }}
+            {{ form_row(edit_form.status) }}
+            {{ form_row(edit_form.indexLayout) }}
+        </fieldset>
+
+        {{ form_rest(edit_form) }}
+
+        {{ update() }}
+    </form>
+
+{% endblock %}

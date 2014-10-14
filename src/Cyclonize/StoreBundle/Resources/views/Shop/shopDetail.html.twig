@@ -1,0 +1,178 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% block doucmentid %}shop-wrap{% endblock %}
+
+
+    {% block stylesheets %}
+        {% stylesheets output='bundles/cyclonizestore/css/style-compress.css' filter='cssrewrite'
+        'bundles/cyclonizestore/css/style.css'
+        'bundles/cyclonizestore/css/owl.carousel.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+        {% endstylesheets %}
+    {% endblock %}
+
+
+{% block content -%}
+    {% set taxonIndex = 0 %}
+    {% for taxon in taxons %}
+        {% set layout = (taxonIndex % 4) %}
+        {{ render_esi(controller("CyclonizeStoreBundle:Default:renderShopTaxon", {'id': taxon.getId, 'layout': (layout + 1)})) }}
+        {% set taxonIndex = taxonIndex + 1 %}
+    {% endfor %}
+{% endblock %}
+
+{% block extendjavascript %}
+    <!-- Include js plugin -->
+    {% javascripts output='assets/compiled/shop-detail.js'
+    'bundles/cyclonizestore/js/owl.carousel.js'
+    'bundles/cyclonizestore/js/jquery.Scrollto.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script type="text/javascript">
+        var menuFloatPos = $('.tab-products').position().top + $('.tab-products').height();
+        function onScroll(event) {
+            var scrollPos = $(document).scrollTop();
+            var newFloatPos = $('.tab-products').position().top + $('.tab-products').height();
+            if (newFloatPos > menuFloatPos)
+                menuFloatPos = newFloatPos;
+            if (scrollPos >= menuFloatPos) {
+                $('.tab-products').css({position: 'fixed'});
+            } else {
+                $('.tab-products').css({position: 'relative'});
+                return;
+            }
+            $('.tab-products a').each(function () {
+                var currLink = $(this);
+                var refElement = $(currLink.attr("href"));
+                if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                    $('.tab-products ul li').removeClass("active");
+                    currLink.parents('li').addClass("active");
+                }
+                else {
+                    currLink.parents('li').removeClass("active");
+                }
+            });
+        }
+        $(document).ready(function () {
+            $(document).on("scroll", onScroll);
+            $('.tab-products li').on('click', function (e) {
+                e.preventDefault();
+                $.scrollTo($($(this).find('a').attr('href')).position().top, 500)
+            })
+            //smoothscroll
+            $('a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+                $(document).off("scroll");
+
+                $('a').each(function () {
+                    $(this).removeClass('active');
+                })
+                $(this).addClass('active');
+
+                var target = this.hash,
+                        menu = target;
+                $target = $(target);
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top + 2
+                }, 500, 'swing', function () {
+                    window.location.hash = target;
+                    $(document).on("scroll", onScroll);
+                });
+            });
+            $(' #da-thumbs > li ').each(function () {
+                $(this).hoverdir();
+            });
+            //show sub category
+            $(".arrivals-category .category").click(function () {
+                $(".sub-category").tgle("blind",
+                        {direction: "right"}, 500);
+            });
+            //active
+            $(".ul-subcat li").click(function () {
+                $(this).parents(".ul-subcat").find("li").removeClass("active");
+                $(this).addClass("active");
+            });
+            owl = $("#work-money");
+
+            owl.owlCarousel({
+                navigation: false, // Show next and prev buttons
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                afterInit: afterOWLinit // do some work after OWL init
+            });
+
+
+            function afterOWLinit() {
+
+                // adding A to div.owl-page
+                $('.owl-controls .owl-page').append('<a class="item-link"></a>');
+
+                var pafinatorsLink = $('.owl-controls .item-link');
+
+                /**
+                 * this.owl.userItems - it's your HTML <div class="item"><img src="http://www.ow...t of us"></div>
+                 */
+                $.each(this.owl.userItems, function (i) {
+
+                    $(pafinatorsLink[i])
+                        // i - counter
+                        // Give some styles and set background image for pagination item
+
+                        // set Custom Event for pagination item
+                            .click(function () {
+                                owl.trigger('owl.goTo', i);
+                            }).append('<img src="' + $(this).find('img').attr('src') + '" style="width:100px;height:80px"><div class="da-overflow"></div>');
+
+                });
+
+
+                // add Custom PREV NEXT controls
+                $('.owl-pagination').prepend('<a href="#prev" class="prev-owl"/>');
+                $('.owl-pagination').append('<a href="#next" class="next-owl"/>');
+
+
+                // set Custom event for NEXT custom control
+                $(".next-owl").click(function () {
+                    owl.trigger('owl.next');
+                });
+
+                // set Custom event for PREV custom control
+                $(".prev-owl").click(function () {
+                    owl.trigger('owl.prev');
+                });
+                $('.owl-pagination .owl-page').each(function () {
+                    $(this).hoverdir();
+                })
+            }
+
+            arrival = $('#newarrivals').owlCarousel({
+                navigation: false, // Show next and prev buttons
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                afterInit: initArrival
+            });
+            function initArrival() {
+                var pafinatorsLink = $('.thumb-products .da-thumbs li a');
+                $.each(this.owl.userItems, function (i, item) {
+                    var titles = $('.dash-wrap h2');
+                    var ulsmart = $('<div></div>');
+                    $.each(titles, function (titleIndex, title) {
+                        if (i == titleIndex) ulsmart.append('<li class="active">-&nbsp;&nbsp;' + $(title).text().toUpperCase() + '</li>'); else ulsmart.append('<li>-&nbsp;&nbsp;' + $(title).text().toUpperCase() + '</li>');
+                    });
+                    $(item).find('.leftpanel').prepend('<ul class="ul-smart">' + ulsmart.html() + '</ul>')
+                    $(pafinatorsLink[i])
+                        // i - counter
+                        // Give some styles and set background image for pagination item
+
+                        // set Custom Event for pagination item
+                            .click(function () {
+                                arrival.trigger('owl.goTo', i);
+                            });
+
+                });
+            }
+        });
+    </script>
+{% endblock %}

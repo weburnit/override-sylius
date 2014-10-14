@@ -1,0 +1,354 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyclonize</title>
+
+    <!-- // Meta -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- // Main stylesheet -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,700&amp;subset=latin,vietnamese,latin-ext">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- // Modernizr and jQuery -->
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/vendor/jquery-1.11.1.min.js"></script>
+    <style type="text/css">
+    #home .carousel-control{z-index: 10000; position: absolute;}
+    .container{position: relative;}
+    .slide-img{position: absolute;
+        top: 11%;
+        left:0;
+        z-index: 100;
+    }
+    .slide-img img{width: 100%}
+    .side-info{position: relative;
+        z-index: 300;
+    }
+    @media screen and (max-width: 768px){
+        .slide-img{
+            top: 32%!important;
+            left: -2%!important;
+            width: 73%;
+        }
+    }
+    @media screen and (max-width: 736px){
+        .slide-img {
+        top: 33%!important;
+        left: 0%!important;
+        width:70%;
+        }
+    }
+    @media screen and (max-width: 667px){
+        .slide-img {
+        top: 34%!important;
+        }
+    }
+     @media screen and (max-width: 600px){
+        .slide-img {
+        top: 36%!important;
+        left: 15%!important;
+        width: 80%; 
+        }
+    }
+    @media screen and (max-width: 568px){
+        .slide-img {
+        top: 38%!important;
+        }
+    }
+    @media screen and (max-width: 414px){
+        #home .home-image h1, #home #home-video h1, #home .home-image h1 a, #home #home-video h1 a{
+            font-size: 35px!important;
+            margin-top: 100px!important;
+        }
+        .slide-img {
+        top: 42%!important;
+        left: 0%!important;
+        width: 90%;
+        }
+    }
+    @media screen and (max-width: 375px){
+        .slide-img {top: 45%!important;}
+    }
+    @media screen and (max-width: 320px){
+        .slide-img {top: 47%!important;}
+    }
+    </style>
+</head>
+<body>
+
+    <div id="home">
+        <header>
+            <nav class="navbar navbar-inverse navbar-static-top navbar-hidden-menu" role="navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="Logo">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+
+                    <div class="navbar-right navbar-main-menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">Home</a></li>
+
+                            <li class="dropdown">
+                                <a href="shop.html" title="" class="dropdown-toggle" data-toggle="dropdown">Shop</a>
+                                <ul class="dropdown-menu" role="menu" style="right: -60%">
+                                    <li><a href="#">New Arrival</a></li>
+                                    <li><a href="#">DEAL OF THE DAY</a></li>
+                                    <li><a href="#">Best Sellers</a></li>
+                                    <li><a href="#">Worth The Moner</a></li>
+                                    <li><a href="#">Sale Off</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="#" title="">Our store</a></li>
+                            <li><a href="#" title="">FAQ</a></li>
+
+                            <li class="dropdown">
+                                <a href="#" title="" class="dropdown-toggle" data-toggle="dropdown">Follow us</a>
+                                <ul class="dropdown-menu" role="menu" style="right: -20%">
+                                    <li><a href="#">Facebook</a></li>
+                                    <li><a href="#">Twitter</a></li>
+                                    <li><a href="#">Google+</a></li>
+                                    <li><a href="#">Youtube</a></li>
+                                    <li><a href="#">Vimeo</a></li>
+                                    <li><a href="#">Instagram</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                       <ul class="nav navbar-nav navbar-icons">
+                            <li class="dropdown">
+                                <a href="#" title="" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-user"></i>
+                                    <span class="sr-only">User</span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" style="right: -200%">
+                                    <li><a href="#">View My Account</a></li>
+                                    <li><a href="#">Sign In</a></li>
+                                    <li><a href="#">Create New Account</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" title="" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span class="sr-only">Cart</span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" style="right: -100%">
+                                    <li><a href="#">View My Account</a></li>
+                                    <li><a href="#">Sign In</a></li>
+                                    <li><a href="#">Create New Account</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" title="" class="search-toogle">
+                                    <i class="fa fa-search"></i>
+                                    <span class="sr-only">Search</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="navbar-right navbar-gravity">
+                        <button id="hide-menu" class="navbar-hide-menu">
+                            <img src="img/menu-times.png" alt="x">
+                        </button>
+
+                        <button id="show-menu" class="navbar-show-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div><!-- /.navbar-collapse -->
+        </nav><!-- /.container -->
+
+        <!-- // -->
+        <div class="navbar-search-dropdown hidden">
+            <div class="container">
+                <form action="#" method="GET" class="search-form">
+                    <div class="search-wrapper">
+                        <input type="search" name="search" placeholder="Search for products" class="form-control input-lg search-input" autofocus="">
+                        <button type="submit">
+                            <i class="fa fa-long-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="row search-filter">
+                    <div class="col-md-3">
+                        <h3>What're you  <br> looking for?</h3>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h4>Filter By</h4>
+                        <ul>
+                            <li class="active"><a href="#">Business</a></li>
+                            <li><a href="#">Education</a></li>
+                            <li><a href="#">Entertaiment</a></li>
+                            <li><a href="#">Healthcare</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h4>Sort By</h4>
+                        <ul>
+                            <li><a href="#">New Arrival</a></li>
+                            <li><a href="#">Deal of the day</a></li>
+                            <li><a href="#">Best sellers</a></li>
+                            <li class="active"><a href="#">Worth the money</a></li>
+                            <li><a href="#">Sale off</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h4>Price</h4>
+                        <ul>
+                            <li class="active"><a href="#">Price (Low to High)</a></li>
+                            <li><a href="#">Price (High to Low)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </header><!-- /header -->
+
+        <main>
+    <div id="home-carousel" class="carousel slide" data-ride="carousel" data-interval="30000">
+
+    <div class="carousel-inner">
+
+        <div class="item active">
+            <div id="home-video">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-4">
+
+                            <h1>
+                                <span class="medium">IDEAS <i class="light">for</i></span>
+                                <span class="bold">STARTUPS</span>
+                            </h1>
+
+                            <a href="#" class="btn btn-lg btn-white outline" title="Discover our products">Discover our products</a>
+
+                        </div>
+                    </div><!-- /.row -->
+                </div>
+            </div><!-- /#home-video -->
+        </div><!-- /.item -->
+
+        <div class="item" id="home-featured">
+            <div class="container">
+                <div class="row side-info">
+                    <div class="col-md-4">
+
+                        <h1>
+                            <span class="light">Live a new</span>
+                            <span class="bold">INTERACRIVE</span>
+                            <span class="bold">EXPERIENCE</span>
+                        </h1>
+
+                        <a href="#" class="btn btn-lg btn-white outline" title="Discover our products">Discover our products</a>
+
+                    </div>
+                </div>
+                <div class="slide-img"><img src="img/slide1.png" alt=""></div>
+            </div>
+        </div><!-- /.home-image -->
+
+    </div><!-- /.carousel-inner -->
+
+    <a class="left carousel-control" href="#home-carousel" role="button" data-slide="prev">
+        <span class="fa fa-chevron-left"></span>
+    </a>
+
+    <a class="right carousel-control" href="#home-carousel" role="button" data-slide="next">
+        <span class="fa fa-chevron-right"></span>
+    </a>
+
+</div><!-- /#home-carousel -->
+
+        </main><!-- /main -->
+
+        <footer>
+            <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-6">
+                    <p>Copyright &copy; 2014 Cyclonize Inc. All rights reserved.</p>
+                    <p>Designed by Bratus Agency</p>
+                    <p></p>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <form action="#" method="POST" class="form-online" id="subscribe-newsletter-form">
+                        <div class="row">
+                            <div class="col-md-8 col-xs-8 col-sm-8 email-wrapper">
+                                <input type="email" class="form-control input-sm" placeholder="Enter your email for our newsletter">
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4 ">
+                                <button type="submit" class="btn btn-block btn-primary btn-sm">Subscribe</button>
+                            </div>
+                        </div>
+                    </form><!-- /#subscribe-newsletter-form -->
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+                    <nav class="social">
+                        <a href="#" data-toogle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" data-toogle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" data-toogle="tooltip" title="Google+"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" data-toogle="tooltip" title="Youtube"><i class="fa fa-youtube"></i></a>
+                        <a href="#" data-toogle="tooltip" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+                        <a href="#" data-toogle="tooltip" title="Instagram"><i class="fa fa-instagram"></i></a>
+                    </nav><!-- /.social -->
+                </div>
+
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+
+        <!-- // DEMO ONLY -->
+        <div id="subscribe-successfully" class="white-popup mfp-hide">
+            <div class="subscribe-wrapper">
+                <h2 class="upper subscribe-heading">Subscribe <br> Successfully</h2>
+
+                <p>We send you the best designs a couple times a month (NO SPAM). <br> You can unsubscribe any time.</p>
+
+                <hr class="hr">
+
+                <a href="#" class="btn btn-primary upper">Go shopping now</a>
+            </div>
+        </div><!-- /#subscribe-successfully -->
+
+        </footer><!-- /footer -->
+    </div>
+
+
+    <!-- // Scripts -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

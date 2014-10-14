@@ -1,0 +1,826 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cyclonize</title>
+
+	<!-- // Meta -->
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<!-- // Main stylesheet -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,700&amp;subset=latin,vietnamese,latin-ext">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+		#owl-demo .item img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		.owl-theme .owl-controls {
+			position: relative;
+			padding-top: 0;
+			padding-bottom: 70px;
+			float: left;
+			width: 100%;
+		}
+
+		.owl-theme .owl-controls .item-link {
+			position: relative;
+			display: block;
+			width: 100px;
+			height: 80px;
+			margin: 0 2px;
+			outline: none;
+		}
+
+		.owl-theme .owl-controls .item-link:focus {
+			-webkit-box-shadow: 0 0 8px #cc4895;
+			-moz-box-shadow: 0 0 8px #cc4895;
+			box-shadow: 0 0 8px #cc4895;
+			outline: none;
+		}
+
+
+		.owl-theme .owl-controls .owl-page span {
+			display: none;
+		}
+
+		.owl-theme .prev-owl,
+		.owl-theme .next-owl {
+			position: absolute;
+			top: -262px;
+			display: block;
+			width: 36px;
+			height: 70px;
+
+
+		}
+		.owl-theme .next-owl{
+			background: url(img/shop/next_icon.png) no-repeat;
+			background-size:100% 100%;
+		}
+		.owl-theme .prev-owl{
+			background: url(img/shop/back_icon.png) no-repeat;
+			background-size:100% 100%;
+		}
+		.owl-theme .prev-owl:focus,
+		.owl-theme .next-owl:focus {
+			-webkit-box-shadow: 0 0 8px #cc4895;
+			-moz-box-shadow: 0 0 8px #cc4895;
+			box-shadow: 0 0 8px #cc4895;
+		}
+
+		.owl-theme .prev-owl {
+			left: -80px;
+		}
+
+		.owl-theme .next-owl {
+			right: -80px;
+		}</style>
+
+		<!-- Important Owl stylesheet -->
+		<link rel="stylesheet" href="css/owl.carousel.css"> 
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<script src="js/vendor/jquery-1.11.1.min.js"></script>
+		<script src="js/plus.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-inverse navbar-static-top navbar-hidden-menu" role="navigation">
+				<div class="container">
+
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+							<span class="sr-only">Menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<a class="navbar-brand" href="index.html">
+							<img src="img/logo.png" alt="Logo">
+						</a>
+					</div>
+
+					<div class="collapse navbar-collapse" id="navbar-collapse">
+
+						<div class="navbar-right navbar-main-menu">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="index.html">Home</a></li>
+
+								<li class="dropdown">
+									<a href="shop.html" title="" class="dropdown-toggle" data-toggle="dropdown">Shop</a>
+									<ul class="dropdown-menu" role="menu" style="right: -60%">
+										<li><a href="#">New Arrival</a></li>
+										<li><a href="#">DEAL OF THE DAY</a></li>
+										<li><a href="#">Best Sellers</a></li>
+										<li><a href="#">Worth The Moner</a></li>
+										<li><a href="#">Sale Off</a></li>
+									</ul>
+								</li>
+
+								<li><a href="#" title="">Our store</a></li>
+								<li><a href="#" title="">FAQ</a></li>
+
+								<li class="dropdown">
+									<a href="#" title="" class="dropdown-toggle" data-toggle="dropdown">Follow us</a>
+									<ul class="dropdown-menu" role="menu" style="right: -20%">
+										<li><a href="#">Facebook</a></li>
+										<li><a href="#">Twitter</a></li>
+										<li><a href="#">Google+</a></li>
+										<li><a href="#">Youtube</a></li>
+										<li><a href="#">Vimeo</a></li>
+										<li><a href="#">Instagram</a></li>
+									</ul>
+								</li>
+
+							</ul>
+
+							<ul class="nav navbar-nav navbar-icons">
+								<li class="dropdown">
+									<a href="#" title="" class="dropdown-toggle" data-toggle="dropdown">
+										<i class="fa fa-user"></i>
+										<span class="sr-only">User</span>
+									</a>
+									<ul class="dropdown-menu" role="menu" style="right: -200%">
+										<li><a href="#">View My Account</a></li>
+										<li><a href="#">Sign In</a></li>
+										<li><a href="#">Create New Account</a></li>
+									</ul>
+								</li>
+
+								<li>
+									<a href="#" title="" class="dropdown-toggle" data-toggle="dropdown">
+										<i class="fa fa-shopping-cart"></i>
+										<span class="sr-only">Cart</span>
+									</a>
+									<ul class="dropdown-menu" role="menu" style="right: -100%">
+										<li><a href="#">View My Account</a></li>
+										<li><a href="#">Sign In</a></li>
+										<li><a href="#">Create New Account</a></li>
+									</ul>
+								</li>
+
+								<li>
+									<a href="#" title="" class="search-toogle">
+										<i class="fa fa-search"></i>
+										<span class="sr-only">Search</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="navbar-right navbar-gravity">
+							<button id="hide-menu" class="navbar-hide-menu">
+								<img src="img/menu-times.png" alt="x">
+							</button>
+
+							<button id="show-menu" class="navbar-show-menu">
+								<i class="fa fa-bars"></i>
+							</button>
+						</div>
+
+					</div>
+
+				</div><!-- /.navbar-collapse -->
+			</nav><!-- /.container -->
+
+			<!-- // -->
+			<div class="navbar-search-dropdown hidden">
+				<div class="container">
+					<form action="#" method="GET" class="search-form">
+						<div class="search-wrapper">
+							<input type="search" name="search" placeholder="Search for products" class="form-control input-lg search-input" autofocus="">
+							<button type="submit">
+								<i class="fa fa-long-arrow-right"></i>
+							</button>
+						</div>
+					</form>
+
+					<div class="row search-filter">
+						<div class="col-md-3">
+							<h3>What're you  <br> looking for?</h3>
+						</div>
+
+						<div class="col-md-3">
+							<h4>Filter By</h4>
+							<ul>
+								<li class="active"><a href="#">Business</a></li>
+								<li><a href="#">Education</a></li>
+								<li><a href="#">Entertaiment</a></li>
+								<li><a href="#">Healthcare</a></li>
+								<li><a href="#">Lifestyle</a></li>
+							</ul>
+						</div>
+
+						<div class="col-md-3">
+							<h4>Sort By</h4>
+							<ul>
+								<li><a href="#">New Arrival</a></li>
+								<li><a href="#">Deal of the day</a></li>
+								<li><a href="#">Best sellers</a></li>
+								<li class="active"><a href="#">Worth the money</a></li>
+								<li><a href="#">Sale off</a></li>
+							</ul>
+						</div>
+
+						<div class="col-md-3">
+							<h4>Price</h4>
+							<ul>
+								<li class="active"><a href="#">Price (Low to High)</a></li>
+								<li><a href="#">Price (High to Low)</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</header><!-- /header -->
+
+		<main>
+			<div id="shop-wrap">
+				<div class="container">
+					<div class="row">
+						<div class="arrivals-category">
+							<h3 class="title-h3 arrivals">New arrivals</h3>
+							<h3 class="title-h3 category">CATEGORY</h3>
+							<!--SUB CATEGORY-->                        
+							<div class="sub-category">
+								<div class="col-md-3"></div>
+								<div class="col-md-3">
+									<h2>What're you  <br> looking for?</h2>
+								</div>
+
+								<div class="col-md-3">
+									<h4>Filter By</h4>
+									<ul class="ul-subcat">
+										<li><a href="#">Business</a></li>
+										<li><a href="#">Education</a></li>
+										<li><a href="#">Entertaiment</a></li>
+										<li class="active"><a href="#">Healthcare</a></li>
+										<li><a href="#">Lifestyle</a></li>
+									</ul>
+								</div>
+
+								<div class="col-md-3">
+									<h4>Sort By</h4>
+									<ul lass="ul-subcat">
+										<li  class="active"><a href="#">Price (Low to High)</a></li>
+										<li><a href="#">Price (High to Low)</a></li>
+									</ul>
+									<h4 class="last"></h4>
+									<ul lass="ul-subcat">
+										<li class="active"><a href="#">FILTER ALL</a></li> 
+									</ul>
+								</div>
+							</div>
+
+
+							<!--END-->
+						</div>
+						<div class="col-md-6">
+							<ul class="ul-smart">
+								<li>- SMART KEY</li>
+								<li>- BLUE CORE</li>
+								<li class="active">- DASH</li>
+								<li>- FUTURE SCENE</li>
+							</ul>
+							<div class="big-img"><img src="img/shop/img1.jpg" alt=""/></div>
+						</div>
+						<div class="col-md-6">
+							<div class="dash-wrap">
+								<h2 class="title-h2">DASH</h2>
+								<p>Tai nghe thông minh không dây đầu tiên trên thế giới. Bạn chắc hẳn đã từng sử dụng điện thoại thông minh, đồng hồ thông minh nhưng bạn đã nghe tới tai nghe thông minh bao giờ chưa?</p>
+								<a href="#" class="learn-more">Learn more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--TAB PRODUCTS-->
+				<div class="thumb-products">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3"><img src="img/shop/img2.jpg"></div>
+							<div class="col-md-3"><img src="img/shop/img3.jpg"></div>
+							<div class="col-md-3"><img src="img/shop/img4.jpg"></div>
+							<div class="col-md-3"><img src="img/shop/img5.jpg"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-products">
+					<div class="container">
+						<ul class="tab-item">
+							<li class="logo"><a href="#"><img src="img/shop/logo_black.png" alt=""></a></li>
+							<li class="best-deal active"><a href="#the-best-deal">the best deal</a></li>
+							<li class="best-items"><a href="#best-sell">Best selling items</a></li>
+							<li class="worth-money"><a href="#work-the-money">Worth the money</a></li>
+							<li class="sale-off"><a href="#the-best-deal">sale off</a> <a href="#" class="shop-cart">my cart (2)</a></li>            
+						</ul>
+					</div>
+				</div>
+
+				<div class="the-best-deal">
+					<div class="container">
+						<div class="title-product">
+							<h2 class="">the best deal</h2>
+							<a href="#" class="view-more">view more</a>
+						</div>
+						<div class="product-content">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="deal-item">
+										<img src="img/shop/img6.jpg" alt="">
+										<h5>TOUCHPICO</h5>
+										<p class="deal-content">Touchpico là một máy chiếu “cầm tay”
+											có thể biến bất cứ bề mặt nào thành một màn hình cảm ứng với kích thước
+											lên đến 80 inch.</p>
+											<p class="line"></p>
+											<div class="deal-pirce">
+												<p class="left-deal">
+													<span class="price">$ 340.00</span>    
+													<span class="price">$ 200.00</span>
+												</p>                    
+												<p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+											</div>    
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="deal-item">
+											<img src="img/shop/img7.jpg" alt="">
+											<h5>BLINK</h5>
+											<p class="deal-content">Blink không chỉ giúp quan sát mà còn ngay lập tức cảnh báo mỗi khi có những chuyển động khả nghi trong nhà bạn.</p>
+											<p class="line"></p>
+											<div class="deal-pirce">
+												<p class="left-deal">
+													<span class="price">$ 340.00</span>    
+													<span class="price">$ 200.00</span>
+												</p>                    
+												<p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+											</div>    
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="deal-item">
+											<img src="img/shop/img8.jpg" alt="">
+											<h5>EO1</h5>
+											<p class="deal-content">EO1 là một màn hình trình chiếu kích thước 23 inch, độ phân giải 1080p
+												với khung viền trắng đen và hoàn toàn
+												có thể treo trên tường. </p>
+												<p class="line"></p>
+												<div class="deal-pirce">
+													<p class="left-deal">
+														<span class="price">$ 340.00</span>    
+														<span class="price">$ 200.00</span>
+													</p>                    
+													<p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+												</div>    
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="deal-item">
+												<img src="img/shop/img9.jpg" alt="">
+												<h5>COIN</h5>
+												<p class="deal-content">Coin là một thiết bị hay đơn giản hơn chỉ đơn thuần là một chiếc thẻ có chức năng tổng hợp của tất cả các loại thẻ mà bạn đang sử dụng.</p>
+												<p class="line"></p>
+												<div class="deal-pirce">
+													<p class="left-deal">
+														<span class="price">$ 340.00</span>    
+														<span class="price">$ 200.00</span>
+													</p>                    
+													<p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+												</div>  
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--END TAB PRODUCTS-->
+						<!-- BEST SELL-->
+						<div class="tab-products">
+							<div class="container">
+								<ul class="tab-item">
+									<li class="logo"><a href="#"><img src="img/shop/logo_black.png" alt=""></a></li>
+									<li class="best-deal active"><a href="#the-best-deal">the best deal</a></li>
+									<li class="best-items"><a href="#best-sell">Best selling items</a></li>
+									<li class="worth-money"><a href="#work-the-money">Worth the money</a></li>
+									<li class="sale-off"><a href="#the-best-deal">sale off</a> <a href="#" class="shop-cart">my cart (2)</a></li>            
+								</ul>
+							</div>
+						</div>
+						<div class="best-sell">
+							<div class="container">
+								<div class="title-product">
+									<h2>BEST SELLing items</h2>
+									<a href="#" class="view-more">view more</a>
+								</div>
+								<div class="product-content">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="left-sell">
+												<img src="img/shop/img10.jpg" alt=""/>
+											</div>
+											<div class="right-sell">
+												<h5>AVEGANT GLYPH</h5>
+												<p class="sell-desc">Avegant Glyph – không chỉ dành cho gamers, nó còn là thiết bị nghe nhạc hay một rạp chiếu phim 3D cá nhân, không cần dùng màn hình.
+												</p>
+												<a href="#" class="shop-now">shop now</a>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="left-sell">
+												<img src="img/shop/img12.jpg" alt=""/>
+											</div>
+											<div class="right-sell">
+												<h5>TILE</h5>
+												<p class="sell-desc">
+													Tile, một thiết bị nhỏ để giúp tìm kiếm đồ đạc bị thất lạc. Tile có trụ sở ở thành phố Burlingame, CA. Với kích thước nhỏ gọn (36mm x 36mm x 4.2mm) không vô nước.</p>
+													<a href="#" class="shop-now">shop now</a>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="left-sell">
+													<img src="img/shop/img11.jpg" alt=""/>
+												</div>
+												<div class="right-sell">
+													<h5>GOJI</h5>
+													<p class="sell-desc">Ổ khóa thông minh Goji được thiết kế với kiểu dáng đẹp và hiện đại, cho phép bạn toàn quyền kiểm soát những ai ra vào nhà bạn qua điện thoại đi động.</p>
+													<a href="#" class="shop-now">shop now</a>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="left-sell">
+													<img src="img/shop/img13.jpg" alt=""/>
+												</div>
+												<div class="right-sell">
+													<h5>GOJI</h5>
+													<p class="sell-desc">SCiO là thiết bị cảm biến phân tử đầu tiên trên thế giới với kích cỡ nhỉnh hơn một chiếc USB thông thường.</p>
+													<a href="#" class="shop-now">shop now</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END BEST SELL--> 
+							<!-- END BEST SELL--> 
+							<!-- WORTH THE MONEY-->
+							<div class="tab-products">
+								<div class="container">
+									<ul class="tab-item">
+										<li class="logo"><a href="#"><img src="img/shop/logo_black.png" alt=""></a></li>
+										<li class="best-deal active"><a href="#the-best-deal">the best deal</a></li>
+										<li class="best-items"><a href="#best-sell">Best selling items</a></li>
+										<li class="worth-money"><a href="#work-the-money">Worth the money</a></li>
+										<li class="sale-off"><a href="#the-best-deal">sale off</a> <a href="#" class="shop-cart">my cart (2)</a></li>            
+									</ul>
+								</div>
+							</div>
+							<div class="work-the-money">
+								<div class="container">
+									<div class="title-product">
+										<h2>WORTH THE MONEY</h2>
+										<a href="#" class="view-more">view more</a>
+									</div>
+									<div class="product-content">
+										<div id="custom-pag-place"></div>
+
+										<div id="work-money" class="owl-carousel owl-theme">
+
+											<div class="item">
+												<div class="row">
+													<div class="col-md-3">
+														<h5>EMBUE<br/>NGƯỜI CHỈ HUY<br/>SÁNG SUỐT</h5>
+														<p>Hệ thống Embue có ba phần: Core, Sensor và Module. Core phục vụ như một hệ điều hành cho toàn bộ căn nhà, quản lý nhiệt và hệ thống làm mát. Chúng có thể được gắn liền với điều hòa không khí, hệ thống sưởi ấm. </p>
+													</div>
+													<div class="col-md-6"><img src="img/shop/slide1.jpg" alt="The Last of us"></div>
+													<div class="col-md-3">
+														<ul class="ul-ergonomic">
+															<li>Ergonomic</li>
+															<li>Interactive</li>
+															<li>Sensations</li>
+														</ul>
+														<a href="#" class="learn-more">learn more</a>
+													</div>
+												</div>
+											</div>
+											<div class="item">
+												<div class="row">
+													<div class="col-md-3">
+														<h5>EMBUE<br/>NGƯỜI CHỈ HUY SÁNG SUỐT</h5>
+														<p>Hệ thống Embue có ba phần: Core, Sensor và Module. Core phục vụ như một hệ điều hành cho toàn bộ căn nhà, quản lý nhiệt và hệ thống làm mát. Chúng có thể được gắn liền với điều hòa không khí, hệ thống sưởi ấm. </p>
+													</div>
+													<div class="col-md-6"><img src="img/shop/slide1.jpg" alt="The Last of us"></div>
+													<div class="col-md-3">
+														<ul class="ul-ergonomic">
+															<li>Ergonomic</li>
+															<li>Interactive</li>
+															<li>Sensations</li>
+														</ul>
+														<a href="#" class="learn-more">learn more</a>
+													</div>
+												</div>
+											</div>
+											<div class="item">
+												<div class="row">
+													<div class="col-md-3">
+														<h5>EMBUE<br/>NGƯỜI CHỈ HUY SÁNG SUỐT</h5>
+														<p>Hệ thống Embue có ba phần: Core, Sensor và Module. Core phục vụ như một hệ điều hành cho toàn bộ căn nhà, quản lý nhiệt và hệ thống làm mát. Chúng có thể được gắn liền với điều hòa không khí, hệ thống sưởi ấm. </p>
+													</div>
+													<div class="col-md-6"><img src="img/shop/slide1.jpg" alt="The Last of us"></div>
+													<div class="col-md-3">
+														<ul class="ul-ergonomic">
+															<li>Ergonomic</li>
+															<li>Interactive</li>
+															<li>Sensations</li>
+														</ul>
+														<a href="#" class="learn-more">learn more</a>
+													</div>
+												</div>
+											</div>
+											<div class="item">
+												<div class="row">
+													<div class="col-md-3">
+														<h5>EMBUE<br/>NGƯỜI CHỈ HUY SÁNG SUỐT</h5>
+														<p>Hệ thống Embue có ba phần: Core, Sensor và Module. Core phục vụ như một hệ điều hành cho toàn bộ căn nhà, quản lý nhiệt và hệ thống làm mát. Chúng có thể được gắn liền với điều hòa không khí, hệ thống sưởi ấm. </p>
+													</div>
+													<div class="col-md-6"><img src="img/shop/slide1.jpg" alt="The Last of us"></div>
+													<div class="col-md-3">
+														<ul class="ul-ergonomic">
+															<li>Ergonomic</li>
+															<li>Interactive</li>
+															<li>Sensations</li>
+														</ul>
+														<a href="#" class="learn-more">learn more</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								</div>
+								<!-- END WORTH THE MONEY--> 
+								<!-- SELL OFF-->
+								<div class="tab-products">
+									<div class="container">
+										<ul class="tab-item">
+											<li class="logo"><a href="#"><img src="img/shop/logo_black.png" alt=""></a></li>
+											<li class="best-deal active"><a href="#the-best-deal">the best deal</a></li>
+											<li class="best-items"><a href="#best-sell">Best selling items</a></li>
+											<li class="worth-money"><a href="#work-the-money">Worth the money</a></li>
+											<li class="sale-off"><a href="#the-best-deal">sale off</a> <a href="#" class="shop-cart">my cart (2)</a></li>            
+										</ul>
+									</div>
+								</div>
+
+								<div class="the-best-deal">
+									<div class="container">
+										<div class="title-product">
+											<h2 class="">the best deal</h2>
+											<a href="#" class="view-more">view more</a>
+										</div>
+										<div class="product-content">
+											<div class="row">
+												<div class="col-md-3">
+													<div class="deal-item">
+														<img src="img/shop/img14.jpg" alt="">
+														<h5>FRANKENSPIEL FS-X</h5>
+														<p class="deal-content">
+															Mặc dù có kích thước nhỏ và sử dụng
+															kết nối qua Bluetooth nhưng âm thanh mà Frankenspiel FS-X mang lại vô cùng tuyệt vời.</p>
+															<p class="line"></p>
+															<div class="deal-pirce">
+																<p class="left-deal">
+																	<span class="price">$ 340.00</span>    
+																	<span class="price">$ 120.00</span>
+																</p>                    
+																<p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+															</div>    
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="deal-item">
+															<img src="img/shop/img15.jpg" alt="">
+															<h5>BSX INSIGHT</h5>
+															<p class="deal-content">BSX Insight sẽ nhắc bạn lúc nào cần phải giảm/tăng cường độ hoạt động hoặc nhắc bạn đã đến lúc nghỉ ngơi. </p>
+															<p class="line"></p>
+															<div class="deal-pirce">
+																<p class="left-deal">
+																	<span class="price">$ 340.00</span>    
+																	<span class="price">$ 98.00</span>
+																</p>                    
+																<p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+															</div>    
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="deal-item">
+															<img src="img/shop/img16.jpg" alt="">
+															<h5>SHERLYBOX</h5>
+															<p class="deal-content">Sherlybox là một ổ cứng ngoài có khả năng kết nối với hệ thống máy tính của bạn và thiết lập một trang dữ liệu trực tuyến cá nhân.</p>
+															<p class="line"></p>
+															<div class="deal-pirce">
+																<p class="left-deal">
+																	<span class="price">$ 340.00</span>    
+																	<span class="price">$ 135.00</span>
+																</p>                    
+																<p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+															</div>    
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="deal-item">
+															<img src="img/shop/img17.jpg" alt="">
+															<h5>ARK</h5>
+															<p class="deal-content">ARK chính là bộ sạc di động thế hệ mới sử dụng hệ thống Qi, có thể truyền năng lượng cho điện thoại/tablet của bạn bất cứ lúc nào và quan trọng nhất là không cần sử dụng dây nối. </p>
+															<p class="line"></p>
+															<div class="deal-pirce">
+																<p class="left-deal">
+																	<span class="price">$ 340.00</span>    
+																	<span class="price">$ 200.00</span>
+																</p>                    
+																<p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+															</div>  
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--END TAB PRODUCTS-->
+								</main><!-- /main -->
+
+								<footer>
+									<div class="container">
+										<div class="row">
+											<div class="col-md-5 col-sm-6">
+												<p>Copyright &copy; 2014 Cyclonize Inc. All rights reserved.</p>
+												<p><a href="http://anhskohbo.com" target="_blank">@anhskohbo</a></p>
+											</div>
+
+											<div class="col-md-4 col-sm-6">
+												<form action="#" method="POST" class="form-online" id="subscribe-newsletter-form">
+													<div class="row">
+														<div class="col-md-8 col-xs-8 col-sm-8 email-wrapper">
+															<input type="email" class="form-control input-sm" placeholder="Enter your email for our newsletter">
+														</div>
+														<div class="col-md-4 col-xs-4 col-sm-4 ">
+															<button type="submit" class="btn btn-block btn-primary btn-sm">Subscribe</button>
+														</div>
+													</div>
+												</form><!-- /#subscribe-newsletter-form -->
+											</div>
+
+											<div class="col-md-3 col-sm-12">
+												<nav class="social">
+													<a href="#" data-toogle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a>
+													<a href="#" data-toogle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a>
+													<a href="#" data-toogle="tooltip" title="Google+"><i class="fa fa-google-plus"></i></a>
+													<a href="#" data-toogle="tooltip" title="Youtube"><i class="fa fa-youtube"></i></a>
+													<a href="#" data-toogle="tooltip" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+													<a href="#" data-toogle="tooltip" title="Instagram"><i class="fa fa-instagram"></i></a>
+												</nav><!-- /.social -->
+											</div>
+
+										</div><!-- /.row -->
+									</div><!-- /.container -->
+
+									<!-- // DEMO ONLY -->
+									<div id="subscribe-successfully" class="white-popup mfp-hide">
+										<div class="subscribe-wrapper">
+											<h2 class="upper subscribe-heading">Subscribe <br> Successfully</h2>
+
+											<p>We send you the best designs a couple times a month (NO SPAM). <br> You can unsubscribe any time.</p>
+
+											<hr class="hr">
+
+											<a href="#" class="btn btn-primary upper">Go shopping now</a>
+										</div>
+									</div><!-- /#subscribe-successfully -->
+
+								</footer><!-- /footer -->
+
+
+								<!-- // Scripts -->
+								<script src="js/plugins.js"></script>
+								<script src="js/main.js"></script>
+								<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+								<script type="text/javascript">
+									$(document).ready(function(){
+									//show sub category
+									$(".arrivals-category .category").click(function(){
+										$(".sub-category").toggle( "blind", 
+											{direction: "right"},500 );
+									});
+								//active
+								$(".ul-subcat li").click(function(){
+									$(this).parents(".ul-subcat").find("li").removeClass("active");
+									$(this).addClass("active");
+								});
+
+							});
+								</script>
+								<!-- Include js plugin -->
+								<script src="js/owl.carousel.js"></script>
+								<script type="text/javascript">
+									$(document).ready(function(){
+
+										var owl;
+
+										$(document).ready(function () {
+
+											owl = $("#work-money");
+
+											owl.owlCarousel({
+
+						        navigation: false, // Show next and prev buttons
+						        slideSpeed: 300,
+						        paginationSpeed: 400,
+						        singleItem: true,
+						        afterInit: afterOWLinit // do some work after OWL init
+						    });
+
+
+
+
+											function afterOWLinit() {
+
+						        // adding A to div.owl-page
+						        $('.owl-controls .owl-page').append('<a class="item-link" href="#"/>');
+
+						        var pafinatorsLink = $('.owl-controls .item-link');
+
+						        /**
+						         * this.owl.userItems - it's your HTML <div class="item"><img src="http://www.ow...t of us"></div>
+						         */
+						         $.each(this.owl.userItems, function (i) {
+
+						         	$(pafinatorsLink[i])
+						                // i - counter
+						                // Give some styles and set background image for pagination item
+						                .css({
+						                	'background': 'url(' + $(this).find('img').attr('src') + ') center center no-repeat',
+						                	'-webkit-background-size': 'cover',
+						                	'-moz-background-size': 'cover',
+						                	'-o-background-size': 'cover',
+						                	'background-size': 'cover'
+						                })
+						                // set Custom Event for pagination item
+						                .click(function () {
+						                	owl.trigger('owl.goTo', i);
+						                });
+
+						            });
+
+
+
+						        // add Custom PREV NEXT controls
+						        $('.owl-pagination').prepend('<a href="#prev" class="prev-owl"/>');
+						        $('.owl-pagination').append('<a href="#next" class="next-owl"/>');
+
+
+						        // set Custom event for NEXT custom control
+						        $(".next-owl").click(function () {
+						        	owl.trigger('owl.next');
+						        });
+
+						        // set Custom event for PREV custom control
+						        $(".prev-owl").click(function () {
+						        	owl.trigger('owl.prev');
+						        });
+
+						    }
+
+						});
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+      	/*$(".tab-products .tab-item li a").click(function() { 
+      		var sItem  = $(this).attr("href");
+			 alert(sItem);
+		  $('html, body').animate({
+                        scrollTop: $(sItem).offset().top-125
+                    }, 2000);
+		});*/
+		
+
+});
+</script>
+</body>
+</html>

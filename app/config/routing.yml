@@ -1,0 +1,58 @@
+cyclonize_store:
+    resource: "@CyclonizeStoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+sylius_installer:
+    resource: @SyliusInstallerBundle/Resources/config/routing.yml
+
+sylius_web:
+    resource: @SyliusWebBundle/Resources/config/routing/main.yml
+
+create:
+    resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"
+
+payum_capture:
+    resource: "@PayumBundle/Resources/config/routing/capture.xml"
+
+payum_notify:
+    resource: "@PayumBundle/Resources/config/routing/notify.xml"
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /account/profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /account
+
+fos_oauth_server_token:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+hwi_oauth_security:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix: /connect
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix: /login
+
+amazon_login:
+    path: /login/check-amazon
+
+facebook_login:
+    path: /login/check-facebook
+
+google_login:
+    path: /login/check-google

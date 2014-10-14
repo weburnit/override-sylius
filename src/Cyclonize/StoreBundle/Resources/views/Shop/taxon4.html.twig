@@ -1,0 +1,33 @@
+<div class="work-the-money" id="work-the-money">
+    <div class="container">
+        <div class="title-product">
+            <h2>{{ taxon.getName }}</h2>
+            <a href="{{ path(taxon) }}" title="{{ taxon.getName }}" class="view-more">view more</a>
+        </div>
+        <div class="product-content">
+            <div id="custom-pag-place"></div>
+            <div id="work-money" class="owl-carousel owl-theme">
+                {% for product in products %}
+                <div class="item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>{{ product.name }}</h5>
+
+                            <p>{{ product.shortDescription|default('sylius.product.no_description'|trans)|raw }}</p>
+                        </div>
+                        <div class="col-md-6"><img src="{{ product.image ? product.image.path|imagine_filter('cyclonize_worth_money') : 'http://placehold.it/200x200' }}" alt="{{ product.name }}"></div>
+                        <div class="col-md-3">
+                            <ul class="ul-ergonomic">
+                                {% for taxon in product.getTaxons %}
+                                    {% if taxon.getSolrIndex == 1 %}<li><a href="{{ path(taxon) }}">{{ taxon.getName }}</a></li>{% endif %}
+                                {% endfor %}
+                            </ul>
+                            <a href="{{ path(product) }}" title="{{ product.name }}" class="learn-more">learn more</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

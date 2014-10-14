@@ -1,0 +1,16 @@
+{% set product = variant.product %}
+<div class="left-box">
+    <div class="cart-img"><a href="{{ path(product) }}"><img src="{{ product.image ? product.image.path|imagine_filter('cyclonize_product_cart', true) : 'http://placehold.it/260x150' }}"/></a></div>
+    <div class="cart-desc">
+        <h5 class="title-h5"><a href="{{ path(product) }}">{{ product.name }}</a></h5>
+        <span class="small-price">{{ item.unitPrice|sylius_price }}</span>
+        {% if variant.presentation is not empty %}
+            <strong>{{ variant.presentation }}</strong>
+        {% elseif product.hasOptions %}
+                {% for option in variant.options %}
+                    <p class="color">{{ option.presentation }} : <span class="text-bold">{{ option.value }}</span>
+                {% endfor %}
+        {% endif %}
+        <p>Available To Ship<br/>(Within 24 Hours)</p>
+    </div>
+</div>

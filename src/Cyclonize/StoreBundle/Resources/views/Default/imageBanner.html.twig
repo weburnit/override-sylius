@@ -1,0 +1,21 @@
+<div class="item home-image {% if index == 1 %}active{% endif %}" id="home-featured">
+    <div class="container">
+        <div class="row side-info">
+            <div class="col-md-4">
+
+                <h1>
+                    {% set titleIndex = 1 %}
+                    {% for title in banner.getTitleArray %}
+                        {% if titleIndex == 1 %}<span class="light">{{ title }}</span>
+                        {% else %}<span class="bold">{{ title | upper }}</span>{% endif %}
+                        {% set titleIndex = titleIndex + 1 %}
+                    {% endfor %}
+                </h1>
+
+                <a href="{{ banner.url }}" class="btn btn-lg btn-white outline" title="{{ banner.getName }}">{{ 'Figure out' | trans }}</a>
+
+            </div>
+        </div>
+        <div class="slide-img"><img src="{{ asset(banner.getFileAsset) }}" alt=""></div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusResourceBundle:Macros:buttons.html.twig' as buttons %}
+{% from 'SyliusWebBundle:Backend/Macros:misc.html.twig' import pagination %}
+{% from 'SyliusWebBundle:Backend/Product:macros.html.twig' import list %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'Banners'|trans }}</li>
+    </ol>
+{% endblock %}
+{% block content -%}
+    <div class="page-header">
+        <div class="actions-menu">
+            {{ buttons.create(path('administration_banner_new'), 'Create Banner'|trans) }}
+        </div>
+        <h1><i class="glyphicon glyphicon-th-list"></i> {{ 'Banners'|trans|raw }}</h1>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Url</th>
+            <th>Type</th>
+            <th>Clicks</th>
+            <th>Status</th>
+            <th>Indexlayout</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('administration_banner_show', { 'id': entity.id }) }}">{{ entity.id }}</a>
+                </td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.url }}</td>
+                <td>{{ entity.getKind }}</td>
+                <td>{{ entity.clicks }}</td>
+                <td>{{ entity.status }}</td>
+                <td>{{ entity.indexLayout }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('administration_banner_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('administration_banner_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,14 @@
+services:
+    doctrine_events_listener:
+        class: Cyclonize\StoreBundle\Services\DoctrineHandlerListener
+        arguments: ["@solarium.client", "@session"]
+        tags:
+            - { name: doctrine.event_listener, event: preUpdate, method: preUpdate }
+            - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+            - { name: doctrine.event_listener, event: postRemove, method: postRemove }
+
+    cyclonize.menu_builder:
+        class: Cyclonize\StoreBundle\EventListener\MenuBuilderListener
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu_builder.backend.main, method: addBackendMenuItems }
+            - { name: kernel.event_listener, event: sylius.menu_builder.backend.sidebar, method: addBackendMenuItems }

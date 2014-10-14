@@ -1,0 +1,24 @@
+<div class="item {% if index == 1 %}active{% endif %}">
+    <div id="home-video-{{ banner.getId }}" class="home-video" rel="/{{ banner.getFileAsset }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <h1>
+                        {% set titleIndex = 1 %}
+                        {% for title in banner.getTitleArray %}
+                            {% if titleIndex == 1 %}<span class="medium">{{ title }} </span>
+                            {% elseif titleIndex == 2%}<i class="light">{{ title }}</i>
+                            {% else %}<span class="bold">{{ title | upper }}</span>
+                            {% endif %}
+                            {% set titleIndex = titleIndex + 1 %}
+                        {% endfor %}
+
+                    </h1>
+
+                    <a href="{{ banner.url }}" class="btn btn-lg btn-white outline" title="{{ banner.getName }}">{{ 'Figure out' | trans }}</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

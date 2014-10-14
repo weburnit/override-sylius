@@ -1,0 +1,116 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% import 'SyliusWebBundle:Frontend/Macros:buttons.html.twig' as buttons %}
+{% from 'SyliusWebBundle:Frontend/Macros:misc.html.twig' import pagination %}
+{% from 'SyliusWebBundle:Frontend/Product:macros.html.twig' import grid %}
+{% block doucmentid %}{% endblock %}
+{% block content %}
+    <div id="shop-detail">
+        <div class="container">
+            <div class="row">
+                <div class="arrivals-category">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <ul class="breadcrum">
+                                <li><a href="/" title="Cyclonize - Công nghệ trong tầm tay">Cyclonize</a><span>/</span></li>
+                                <li><a href="{{ path('shop_detail') }}">{{ 'Shop' }}</a><span>/</span></li>
+                                {% if taxon.getParent is not null %}
+                                <li><a href="{{ path(taxon.getParent) }}">{{ taxon.getParent.getName }}</a><span>/</span></li>
+                                    {% endif %}
+                                <li><a href="{{ path(taxon) }}">{{ taxon.name }}</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="sort-icon">
+                                <img src="img/shop_detail/sort_icon1.png" alt=""/>
+                                <img src="img/shop_detail/sort_icon2.png" alt=""/>
+                            </div>
+                            <h3 class="title-h3 category">CATEGORY</h3>
+                        </div>
+                    </div>
+                    <!--SUB CATEGORY-->
+                    <div class="sub-category">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <h2>What're you <br> looking for?</h2>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h4>Filter By</h4>
+                            <ul class="ul-subcat">
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Education</a></li>
+                                <li><a href="#">Entertaiment</a></li>
+                                <li class="active"><a href="#">Healthcare</a></li>
+                                <li><a href="#">Lifestyle</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h4>Sort By</h4>
+                            <ul lass="ul-subcat">
+                                <li class="active"><a href="#">Price (Low to High)</a></li>
+                                <li><a href="#">Price (High to Low)</a></li>
+                            </ul>
+                            <h4 class="last"></h4>
+                            <ul lass="ul-subcat">
+                                <li class="active"><a href="#">FILTER ALL</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="the-best-deal" id="the-best-deal">
+            <div class="container">
+                <div class="title-product">
+                    <div class="row">
+                        <h1 class="title-h2">{{ taxon.name }}</h1>
+                    </div>
+                </div>
+                {{ pagination(products) }}
+                <div class="product-content">
+                    <ul id="da-thumbs" class="row da-thumbs">
+                        {{ grid(products) }}
+                    </ul>
+                </div>
+                {{ pagination(products) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extendjavascript %}
+    <script>
+        $(function () {
+            //hover item
+            $(' #da-thumbs > li ').each(function () {
+                $(this).hoverdir();
+            });
+            //silde videos
+            $('#s-video').carouFredSel({
+                auto: false,
+                prev: '#prev2',
+                next: '#next2',
+                pagination: "#pager2",
+                mousewheel: true,
+                swipe: {
+                    onMouse: true,
+                    onTouch: true
+                }
+            });
+            //scroll div
+
+        });
+    </script>
+{% endblock %}
+{% block maincss %}
+    <!-- // Main stylesheet -->
+    <link rel="stylesheet"
+          href="http://fonts.googleapis.com/css?family=Roboto:400,100,700&amp;subset=latin,vietnamese,latin-ext">
+    {% stylesheets output='bundles/cyclonizestore/css/main-compress.css' filter='cssrewrite'
+    'bundles/cyclonizestore/css/main.css'
+    'bundles/cyclonizestore/css/style.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+{% endblock %}

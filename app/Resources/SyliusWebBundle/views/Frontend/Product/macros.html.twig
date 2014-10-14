@@ -1,0 +1,30 @@
+{% macro list(products) %}
+
+{% import 'SyliusWebBundle:Backend/Macros:alerts.html.twig' as alerts %}
+
+{% for product in products %}
+{% include 'SyliusWebBundle:Frontend/Product:_single.html.twig' %}
+{% if not loop.last %}<hr>{% endif %}
+{% else %}
+{{ alerts.info('sylius.product.no_results'|trans) }}
+{% endfor %}
+
+{% endmacro %}
+
+{% macro grid(products, size = 3) %}
+
+{% import 'SyliusWebBundle:Backend/Macros:alerts.html.twig' as alerts %}
+    {% set productIndex = 1 %}
+    {% for product in products %}
+        <li class="col-md-3 deal-item {% if productIndex%4 == 0 %}last{% endif %}{% set productIndex = productIndex + 1 %}">
+                <a href="{{ path(product) }}" title="{{ product.name }}"><img src="{{ product.image ? product.image.path|imagine_filter('cyclonize_medium') : 'http://placehold.it/200x200' }}" alt=""><div class="da-overflow"></div></a>
+            <h5>{{ product.name }}</h5>
+            <p class="deal-content">{{ product.shortDescription|default('sylius.product.no_description'|trans)|raw }}</p>
+            <section class="deal-pirce">
+                <p class="left-deal"><span class="price">{{ product.getPrice | sylius_price }}</span></p>
+                <p class="right-deal"><a href="{{ path(product) }}" title="{{ product.name }}" class="shop-now">shop now</a></p>
+            </section>
+        </li>
+    {% endfor %}
+
+{% endmacro %}

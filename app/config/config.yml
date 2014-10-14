@@ -1,0 +1,165 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: @SyliusCoreBundle/Resources/config/app/main.yml }
+
+framework:
+    translator:      { fallback: %sylius.locale% }
+    secret:          %sylius.secret%
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: %kernel.debug%
+    form:            true
+    csrf_protection: true
+    validation:      { enable_annotations: true }
+    templating:
+        assets_version:   v=%cdn_version%
+        assets_base_urls: %cdn_host%
+        engines:          [twig]
+    esi:             { enabled: true }
+    fragments:      { path: /render }
+    default_locale:  "%sylius.locale%"
+    trusted_proxies: ~
+    session:         ~
+
+twig:
+    form:
+        resources:
+            - 'SyliusWebBundle::forms.html.twig'
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%
+
+assetic:
+    debug:          %kernel.debug%
+    use_controller: false
+    bundles:        ['SyliusWebBundle', 'CyclonizeStoreBundle']
+    filters:
+        cssrewrite: ~
+
+sylius_product:
+    driver: doctrine/orm
+    classes:
+        product:
+            model: Cyclonize\StoreBundle\Entity\Product
+            controller: Sylius\Bundle\CoreBundle\Controller\ProductController
+            repository: Cyclonize\StoreBundle\Entity\ProductRepository
+            form: Cyclonize\StoreBundle\Form\ProductType
+
+sylius_taxonomy:
+    driver: doctrine/orm
+    classes:
+        taxon:
+            model: Cyclonize\StoreBundle\Entity\Taxon
+            form: Cyclonize\StoreBundle\Form\TaxonType
+        taxonomy:
+            model: Cyclonize\StoreBundle\Entity\Taxonomy
+
+doctrine:
+    dbal:
+        driver:   %sylius.database.driver%
+        host:     %sylius.database.host%
+        port:     %sylius.database.port%
+        dbname:   %sylius.database.name%
+        user:     %sylius.database.user%
+        password: %sylius.database.password%
+        charset:  UTF8
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        entity_managers:
+            default:
+                auto_mapping: true
+                mappings:
+                    gedmo_loggable:
+                        type: annotation
+                        prefix: Gedmo\Loggable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                        is_bundle: false
+                filters:
+                    softdeleteable:
+                        class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                        enabled: true
+
+doctrine_phpcr:
+    session:
+        backend: %phpcr_backend%
+        workspace: %phpcr_workspace%
+        username: %phpcr_user%
+        password: %phpcr_pass%
+    odm:
+        auto_mapping: true
+
+swiftmailer:
+    transport: %sylius.mailer.transport%
+    host:      %sylius.mailer.host%
+    port:      %sylius.mailer.port%
+    username:  %sylius.mailer.user%
+    password:  %sylius.mailer.password%
+    spool:     { type: memory }
+
+nelmio_solarium:
+    endpoints:
+        default:
+            host: %solr_host%
+            port: %solr_port%
+            path: /solr
+            core: cyclone
+            timeout: 5
+    clients:
+        default:
+            endpoints: [default]
+            adapter_class: Solarium\Core\Client\Adapter\Curl
+
+trsteel_ckeditor:
+    class: Trsteel\CkeditorBundle\Form\Type\CkeditorType
+    transformers: ['html_purifier']
+    toolbar: ['document', 'clipboard', 'editing', '/', 'basicstyles', 'paragraph', 'links', '/', 'insert', 'styles', 'tools']
+    toolbar_groups:
+        clipboard: ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo']
+        document: ['Source','-','Save','-','Templates']
+        editing: ['Find','Replace','-','SelectAll']
+        basicstyles: ['Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat']
+        paragraph: ['NumberedList','BulletedList','-','Outdent','Indent','-','JustifyLeft', 'JustifyCenter','JustifyRight','JustifyBlock']
+        links: ['Link','Unlink','Anchor']
+        insert: ['Image','Flash','Table','HorizontalRule']
+        styles: ['Styles','Format']
+        tools: ['Maximize', 'ShowBlocks']
+    ui_color: '#'
+    startup_outline_blocks: true
+    width: 800 #Integer or %
+    height: 300 #Integer or %
+    language: 'en-au'
+#    filebrowser_upload_url:
+#        url: relative-url.php?type=file
+#    filebrowser_image_browse_url:
+#        route: route_name
+#        route_parameters:
+#            type: image
+liip_imagine:
+    filter_sets:
+        cyclonize_small:
+            filters:
+                thumbnail: { size: [50, 50], mode: outbound }
+        cyclonize_medium:
+            filters:
+                thumbnail: { size: [255, 255], mode: outbound }
+        cyclonize_product_thumbnail:
+            filters:
+                thumbnail: { size: [85, 85], mode: outbound }
+        cyclonize_product_topslide:
+            filters:
+                thumbnail: { size: [85, 85], mode: outbound }
+        cyclonize_product_cart:
+            filters:
+                thumbnail: { size: [260, 150], mode: outbound }
+        cyclonize_product_list:
+            filters:
+                thumbnail: { size: [260, 170], mode: outbound }
+        cyclonize_worth_money:
+            filters:
+                thumbnail: { size: [540, 340], mode: outbound }
+        cyclonize_newarrival:
+            filters:
+                thumbnail: { size: [268, 190], mode: outbound }
+        cyclonize_newarrival_cover:
+            filters:
+                thumbnail: { size: [550, 410], mode: outbound }

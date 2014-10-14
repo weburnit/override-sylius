@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="arrivals-category">
+            <h3 class="title-h3 arrivals">{{ taxon.getName }}</h3>
+
+            <h3 class="title-h3 category">CATEGORY</h3>
+            <!--SUB CATEGORY-->
+            <div class="sub-category">
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <h2>What're you <br> looking for?</h2>
+                </div>
+
+                <div class="col-md-3">
+                    <h4>Filter By</h4>
+                    <ul class="ul-subcat">
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Entertaiment</a></li>
+                        <li class="active"><a href="#">Healthcare</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h4>Sort By</h4>
+                    <ul lass="ul-subcat">
+                        <li class="active"><a href="#">Price (Low to High)</a></li>
+                        <li><a href="#">Price (High to Low)</a></li>
+                    </ul>
+                    <h4 class="last"></h4>
+                    <ul lass="ul-subcat">
+                        <li class="active"><a href="#">FILTER ALL</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--END-->
+        </div>
+
+        <div class="owl-carousel owl-theme" id="newarrivals">
+            {% for product in products %}
+                <div class="item">
+                    <div class="col-md-6 leftpanel">
+                        <div class="big-img"><img
+                                    src="{{ product.image ? product.image.path|imagine_filter('cyclonize_newarrival_cover') : 'http://placehold.it/550x410' }}"
+                                    alt=""/></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="dash-wrap">
+                            <h2 class="title-h2 bd-bt-0">{{ product.name }}</h2>
+
+                            <p>{{ product.shortDescription|default('sylius.product.no_description'|trans)|raw }}</p>
+                            <a href="#" class="learn-more">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--TAB PRODUCTS-->
+<div class="thumb-products">
+    <div class="container">
+        <ul id="da-thumbs" class="da-thumbs">
+            {% for product in products %}
+                <li>
+                    <a>
+                        <img src="{{ product.image ? product.image.path|imagine_filter('cyclonize_newarrival') : 'http://placehold.it/200x200' }}">
+
+                        <div class="da-overflow"></div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="tab-products">
+    <div class="container">
+        <ul class="tab-item nav" role="tablist">
+            {#<li class="logo"><a href="#"><img src="/img/shop/logo_black.png" alt=""></a></li>#}
+            <li class="best-deal active"><a href="#the-best-deal">the best deal</a></li>
+            <li class="best-items"><a href="#best-sell">Best selling items</a></li>
+            <li class="worth-money"><a href="#work-the-money">Worth the money</a></li>
+            {#<li><a href="#the-best-deal">sale off</a>#}
+            {#</li>#}
+            <li class="sale-off"><a href="#">my cart (2)</a></li>
+        </ul>
+    </div>
+</div>

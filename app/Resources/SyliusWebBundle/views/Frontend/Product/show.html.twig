@@ -1,0 +1,1122 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% set form = sylius_cart_form({'product': product}) %}
+{% block doucmentid %}{% endblock %}
+
+{% block content %}
+
+<div id="product-detail-effect">
+<div class="container">
+    <div class="row">
+        <div class="arrivals-category">
+            <ul class="breadcrum">
+                <li><a href="#">Cyclonize</a><span>/</span></li>
+                <li><a href="#">Shop</a><span>/</span></li>
+                <li><a href="#">New Arrival</a><span>/</span></li>
+                <li class="active"><a href="#">Dash</a></li>
+            </ul>
+            <!--END-->
+        </div>
+        <!--VIDEOS-->
+        <div class="videos">
+            <div class="list_carousel">
+                <h4>SUGGESTED PRODUCT’S VIDEO</h4>
+                <ul id="s-video">
+                    <li>
+                        <a href="#" class="video-img"><img src="/template/img/product_detail/video1.png" alt=""></a>
+                        <h5>Avegant Glyph</h5>
+                        <a href="#" class="view-product">View this product</a>
+                    </li>
+                    <li>
+                        <a href="#" class="video-img"><img src="/template/img/product_detail/video2.png" alt=""></a>
+                        <h5>Blink</h5>
+                        <a href="#" class="view-product">View this product</a>
+                    </li>
+                    <li>
+                        <a href="#" class="video-img"><img src="/template/img/product_detail/video3.png" alt=""></a>
+                        <h5>Tile</h5>
+                        <a href="#" class="view-product">View this product</a>
+                    </li>
+                    <li>
+                        <a href="#" class="video-img"><img src="/template/img/product_detail/video4.png" alt=""></a>
+                        <h5>Embue</h5>
+                        <a href="#" class="view-product">View this product</a>
+                    </li>
+                    <li>
+                        <a href="#" class="video-img"><img src="/template/img/product_detail/video1.png" alt=""></a>
+                        <h5>Avegant Glyph</h5>
+                        <a href="#" class="view-product">View this product</a>
+                    </li>
+                    <li>
+                        <a href="#" class="video-img"><img src="/template/img/product_detail/video2.png" alt=""></a>
+                        <h5>Blink</h5>
+                        <a href="#" class="view-product">View this product</a>
+                    </li>
+                    <li>
+                        <a href="#" class="video-img"><img src="/template/img/product_detail/video3.png" alt=""></a>
+                        <h5>Tile</h5>
+                        <a href="#" class="view-product">View this product</a>
+                    </li>
+                    <li>
+                        <a href="#" class="video-img"><img src="/template/img/product_detail/video4.png" alt=""></a>
+                        <h5>Embue</h5>
+                        <a href="#" class="view-product">View this product</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <a id="prev2" class="prev" href="#">&lt;</a>
+            <a id="next2" class="next" href="#">&gt;</a>
+
+            <p class="video-clode"></p>
+        </div>
+        <!--END VIDEOS-->
+    </div>
+    <video poster="img/product_detail/bg_video.jpg" id="pro-video" controls="controls">
+        <source src="./video/ocean.mp4" type="video/mp4" autoplay="false" preload="metadata">
+        <source src="./video/ocean.webm" type="video/webm">
+        <source src="./video/ocean.ogv" type="video/ogg">
+    </video>
+</div>
+<!--TAB PRODUCTS-->
+
+<div class="tab-products bd-top">
+    <div class="container">
+        <ul class="tab-item nav">
+            <li class="t-shop text-bold"><a href="#design">shop</a></li>
+            <li class="t-new text-blod"><a href="#design">new arrival</a></li>
+            <li class="t-design active"><a href="#design">Design</a></li>
+            <li class="t-design"><a href="#intection">Interaction</a></li>
+            <li class="t-concept"><a href="#conception">conception</a></li>
+            <li class="t-spec"><a href="#intection">specification</a></li>
+            <li class="t-showcase"><a href="#sendo">showcase</a></li>
+            <li class="sale-off">
+                <a href="">my cart (2)</a></li>
+        </ul>
+    </div>
+</div>
+<!--DONCEPTION-->
+<div class="conception" id="design">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="top-time-rate">
+                    <div class="time-rate">
+                        <h2 class="title-h2">01</h2>
+
+                        <p>01/05</p>
+                    </div>
+                    <div class="cus-rate">
+                        <div class="c-rate">
+                            <span>Customer Ratings</span>
+                            <ul class="start-icon">
+                                <li class="start-dark"></li>
+                                <li class="start-dark"></li>
+                                <li class="start-dark"></li>
+                                <li class="start-light"></li>
+                                <li class="start-light"></li>
+                            </ul>
+                        </div>
+                        <p><span class="rate">Customer Reviews</span><span class="r-view">Write a Review</span></p>
+                    </div>
+                </div>
+                <div class="cus-img">
+                    <span class="zoom-icon"></span>
+                    <img src="/template/img/product_detail/img1.jpg" alt=""></div>
+                <div class="socails-like">
+                    <div class="socail-icon">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                    <div class="like-fb"><img src="/template/img/product_detail/fb_icon.png" alt=""></div>
+                </div>
+            </div>
+            <div class="col-md-6 design">
+                <h2 class="title-h2">DESIGN</h2>
+
+                <p class="p-design">
+                    <a href="#" class="education"># Education</a>
+                    <a href="#" class="education"># Entertaiment</a>
+                    <a href="#" class="education"># Lifestyle</a>
+                </p>
+
+                <p class="desc">Dash theo dõi hoạt động của cơ thể trong suốt quá trình tập thể dục, giám sát tốc độ,
+                    thời gian, khoảng cách và nhịp độ, cũng như nhịp tim, độ bão hòa oxy và năng lượng tiêu hao. Tất cả
+                    những số liệu thống kê được theo dõi trong khoảng thời gian thực. Ví dụ, một đoạn video giới thiệu
+                    của Dash cho thấy một vận động viên trượt tuyết có thể nghe được nhịp tim của mình, tốc độ, tỷ lệ
+                    giảm, mạch và tốc độ trong thời gian hoạt động. Rõ ràng, chiếc tai nghe đã đạt được điều này với một
+                    số công cụ rất tinh tế: một gia tốc 3 trục, đèn LED hồng ngoại và cảm biến quang học, cảm biến điện
+                    dung năm trường và một bộ xử lý ARM 32-bit như bạn có thể tìm thấy ở một chiếc điện thoại thông
+                    minh.</p>
+
+                <div class="design-deail">
+                    <h4 class="design-title">Detail</h4>
+
+                    <div class="box b-dimen">
+                        <i></i>
+
+                        <p class="text-bold">Dimensions</p>
+
+                        <p>W 195mm</p>
+
+                        <p>H 190mm</p>
+
+                        <p>L 40mm</p>
+                    </div>
+                    <div class="box b-weight">
+                        <i></i>
+
+                        <p class="text-bold">Weight</p>
+
+                        <p>260g</p>
+                    </div>
+                    <div class="box b-color">
+                        <i></i>
+
+                        <p class="text-bold">Color</p>
+
+                        <p>Platinum</p>
+
+                        <p>Silver</p>
+
+                        <p>Gold</p>
+                    </div>
+                    <div class="box b-box">
+                        <i></i>
+
+                        <p class="text-bold">In The Box</p>
+
+                        <p>Dash</p>
+
+                        <p>Power adapter</p>
+
+                        <p>AC wall plug</p>
+
+                        <p>Power cord</p>
+                    </div>
+                    <div class="desgin-dropdown">
+                        <div class="left-box">
+                            <div class="add-crush">+ Add To My Crush</div>
+                            <div class="size">
+                                <div class="u-select">
+                                    <input type="text" class="u-value" value="Size"/>
+                                    <i class="fa fa-angle-down"></i>
+                                    <ul>
+                                        <li value="i">i</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="color">
+                                <div class="u-select">
+                                    <input type="text" class="u-value" value="Color"/>
+                                    <i class="fa fa-angle-down"></i>
+                                    <ul>
+                                        <li value="i">1</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="quanlity">
+                                <div class="u-select">
+                                    <input type="text" class="u-value" value="quanlity"/>
+                                    <i class="fa fa-angle-down"></i>
+                                    <ul>
+                                        <li value="i">i</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-box">
+                            <p class="price">$240.00</p>
+                            <a href="#" class="checkout">Pre-Order</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END-->
+
+<!--CONCEPTION-->
+<div class="conception" id="conception">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="top-time-rate">
+                    <div class="time-rate">
+                        <h2 class="title-h2">02</h2>
+
+                        <p>02/05</p>
+                    </div>
+                    <div class="cus-rate">
+                        <div class="c-rate">
+                            <span>Customer Ratings</span>
+                            <ul class="start-icon">
+                                <li class="start-dark"></li>
+                                <li class="start-dark"></li>
+                                <li class="start-dark"></li>
+                                <li class="start-light"></li>
+                                <li class="start-light"></li>
+                            </ul>
+                        </div>
+                        <p><span class="rate">Customer Reviews</span><span class="r-view">Write a Review</span></p>
+                    </div>
+                </div>
+                <div class="cus-img"><img src="/template/img/product_detail/img.jpg" alt=""></div>
+                <div class="socails-like">
+                    <div class="socail-icon">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                    <div class="like-fb"><img src="/template/img/product_detail/fb_icon.png" alt=""></div>
+                </div>
+            </div>
+            <div class="col-md-6 design">
+                <h2 class="title-h2">CONCEPTION</h2>
+
+                <p class="p-design">
+                    <a href="#" class="education"># Education</a>
+                    <a href="#" class="education"># Entertaiment</a>
+                    <a href="#" class="education"># Lifestyle</a>
+                </p>
+
+                <div class="design-deail">
+                    <div class="con-img"><img src="/template/img/product_detail/img5.jpg" alt=""/></div>
+                    <div class="desgin-dropdown">
+                        <div class="left-box">
+                            <div class="add-crush">+ Add To My Crush</div>
+                            <div class="size">
+                                <div class="u-select">
+                                    <input type="text" class="u-value" value="Size"/>
+                                    <i class="fa fa-angle-down"></i>
+                                    <ul>
+                                        <li value="i">i</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="color">
+                                <div class="u-select">
+                                    <input type="text" class="u-value" value="Color"/>
+                                    <i class="fa fa-angle-down"></i>
+                                    <ul>
+                                        <li value="i">i</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="quanlity">
+                                <div class="u-select">
+                                    <input type="text" class="u-value" value="quanlity"/>
+                                    <i class="fa fa-angle-down"></i>
+                                    <ul>
+                                        <li value="i">i</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-box">
+                            <p class="price">$240.00</p>
+                            <a href="#" class="checkout">Pre-Order</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END-->
+
+<!--INTRECTION-->
+<div class="conception" id="intection">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+    <div class="top-time-rate">
+        <div class="time-rate">
+            <h2 class="title-h2">03</h2>
+
+            <p>03/05</p>
+        </div>
+        <div class="cus-rate">
+            <div class="c-rate">
+                <ul class="start-icon">
+                    <li class="start-dark"></li>
+                    <li class="start-dark"></li>
+                    <li class="start-dark"></li>
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                </ul>
+                <span>Customer Ratings</span>
+            </div>
+            <p><span class="rate c-gray">Customer Reviews</span><span class="r-view c-gray">Write a Review</span></p>
+        </div>
+    </div>
+
+    <div class="rate-product">
+        <div class="title-product">
+            <h4>AVERAGE RATING FOR THIS PRODUCT</h4>
+            <span class="close-pro">x</span>
+        </div>
+        <div class="c-rate">
+            <ul class="start-icon rate-col1">
+                <li class="start-dark"></li>
+                <li class="start-dark"></li>
+                <li class="start-dark"></li>
+                <li class="start-light"></li>
+                <li class="start-light"></li>
+            </ul>
+            <span class="rate-num rate-col2 bg-none">13 Ratings</span>
+        </div>
+        <div class="rate-content">
+            <div class="rate-row">
+                <ul class="start-icon rate-col1">
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                </ul>
+                <p class="rate-col2"><span class="st-5"></span></p>
+
+                <p class="rate-col3">5</p>
+            </div>
+            <div class="rate-row">
+                <ul class="start-icon rate-col1">
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                </ul>
+                <p class="rate-col2"><span class="st-4"></span></p>
+
+                <p class="rate-col3">7</p>
+            </div>
+            <div class="rate-row">
+                <ul class="start-icon rate-col1">
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                </ul>
+                <p class="rate-col2"><span class="st-3"></span></p>
+
+                <p class="rate-col3">10</p>
+            </div>
+            <div class="rate-row">
+                <ul class="start-icon rate-col1">
+                    <li class="start-light"></li>
+                    <li class="start-light"></li>
+                </ul>
+                <p class="rate-col2"><span class="st-2"></span></p>
+
+                <p class="rate-col3">2</p>
+            </div>
+            <div class="rate-row">
+                <ul class="start-icon rate-col1">
+                    <li class="start-light"></li>
+                </ul>
+
+                <p class="rate-col2"><span class="st-1"></span></p>
+
+                <p class="rate-col3">0</p>
+            </div>
+
+        </div>
+        <div class="this-rate">
+            <div class="left-box">
+                <div class="title-product">
+                    <h4>RATE THIS PRODUCT</h4>
+                </div>
+                <ul class="start-icon">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="right-box">
+                <div class="p-row">
+                    <ul class="start-icon">
+                        <li class="start-light"></li>
+                        <li class="start-light"></li>
+                        <li class="start-light"></li>
+                        <li class="start-light"></li>
+                        <li class="start-light"></li>
+                    </ul>
+                    <P>It’s great</p>
+                </div>
+                <div class="p-row">
+                    <ul class="start-icon">
+                        <li class="start-light"></li>
+                        <li class="start-light"></li>
+                        <li class="start-light"></li>
+                        <li class="start-light"></li>
+                    </ul>
+                    <P>It’s good</p>
+                </div>
+                <div class="p-row">
+                    <ul class="start-icon">
+                        <li class="start-light"></li>
+                        <li class="start-light"></li>
+                        <li class="start-light"></li>
+                    </ul>
+                    <P>It’s ok</p>
+                </div>
+                <div class="p-row">
+                    <ul class="start-icon rate-col1">
+                        <li class="start-light"></li>
+                        <li class="start-light"></li>
+                    </ul>
+                    <P>It’s not bad</p>
+                </div>
+                <div class="p-row">
+                    <ul class="start-icon rate-col1">
+                        <li class="start-light"></li>
+                    </ul>
+                    <P>Don't like it</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="socails-like">
+        <div class="socail-icon">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+        </div>
+        <div class="like-fb"><img src="/template/img/product_detail/fb_icon.png" alt=""></div>
+    </div>
+</div>
+<div class="col-md-6 design">
+    <h2 class="title-h2">Interaction</h2>
+
+    <p class="p-design">
+        <a href="#" class="education"># Education</a>
+        <a href="#" class="education"># Entertaiment</a>
+        <a href="#" class="education"># Lifestyle</a>
+    </p>
+
+    <div class="design-deail">
+        <div class="interaction-desc">
+            <p>Công ty Bragi ở Đức chuyên về các thiết bị, dụng cụ đã quyên góp được 216.094 USD từ chiến dịch gây quỹ
+                trên trang web khởi nghiệp Kickstarter nhằm phát triển Dash – cặp tai nghe không dây tích hợp chức năng
+                theo dõi nhịp tim đầu tiên trên thế giới. Tai nghe Dash không chỉ cung cấp những tính năng tiên tiến như
+                kết nối không dây Bluetooth và mic tích hợp mà còn thực hiện tất cả các loại chức năng khác không liên
+                quan tới âm thanh. Mục đích của Dash là giúp bạn có sự hiểu biết sâu sắc hơn về kỹ năng, khả năng và sức
+                khỏe của bản thân trong khi thực hiện những điều bạn yêu thích. </p>
+
+            <p>Âm nhạc là một phần của cuộc sống của con người. Nó mang lại niềm vui, sự hứng khởi và động lực cho chúng
+                ta. Tuy nhiên, nghe nhạc bằng tai nghe đôi khi là một trải nghiệm không mấy dễ chịu. Dây cáp rối khiến
+                tai nghe bị kéo căng thực sự rất phiền toái. Ngoài ra, ta có thể truy cập vào các nội dung trực tuyến
+                bằng điện thoại thông minh nhưng luôn phải mang điện thoại bên mình mọi lúc mọi nơi – cũng là một trở
+                ngại rất lớn. </p>
+
+            <p>Dash hoạt động với sự thấu hiểu tâm lý người sử dụng. Các chuyển động như tốc độ di chuyển, các bước, các
+                nhịp và khoảng cách đều được theo dõi . Nhịp tim, độ bão hòa oxy và năng lượng tiêu hao cũng được xác
+                định và đo lường, tất cả các hồi tiếp âm thanh trong thời gian thực đều được cung cấp. Nó thậm chí còn
+                làm việc mà không cần có điện thoại thông minh kèm theo.</p>
+        </div>
+        <div class="desgin-dropdown">
+            <div class="left-box">
+                <div class="add-crush">+ Add To My Crush</div>
+                <div class="size">
+                    <div class="u-select">
+                        <input type="text" class="u-value" value="Size"/>
+                        <i class="fa fa-angle-down"></i>
+                        <ul>
+                            <li value="2">2</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="color">
+                    <div class="u-select">
+                        <input type="text" class="u-value" value="Color"/>
+                        <i class="fa fa-angle-down"></i>
+                        <ul>
+                            <li value="2">2</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quanlity">
+                    <div class="u-select">
+                        <input type="text" class="u-value" value="quanlity"/>
+                        <i class="fa fa-angle-down"></i>
+                        <ul>
+                            <li value="1">i</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right-box">
+                <p class="price">$240.00</p>
+                <a href="#" class="checkout">Pre-Order</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<!--END-->
+<!--SPECIFICATION-->
+<div class="conception" id="specification">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="top-time-rate">
+                    <div class="time-rate">
+                        <h2 class="title-h2">04</h2>
+
+                        <p>04/05</p>
+                    </div>
+                    <div class="cus-rate">
+                        <div class="c-rate">
+                            <ul class="start-icon">
+                                <li class="start-dark"></li>
+                                <li class="start-dark"></li>
+                                <li class="start-dark"></li>
+                                <li class="start-light"></li>
+                                <li class="start-light"></li>
+                            </ul>
+                            <span>Customer Ratings</span>
+                        </div>
+                        <p><span class="rate">Customer Reviews</span><span class="r-view c-gray">Write a Review</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grate-like">
+                    <div class="title-product">
+                        <h4></h4>
+                        <span class="close-pro">x</span>
+                    </div>
+                    <div id="boxscroll">
+                        <div class="grate-item">
+                            <div class="grate-title">
+                                <div class="box1">
+                                    <h4>IT’S GREAT</h4>
+                                </div>
+                                <div class="box2">By <span class="text-bold">Peter</span></div>
+                                <div class="box3">
+                                    <p>October 21st, 2014</p>
+                                    <ul class="start-icon">
+                                        <li class="start-light"></li>
+                                        <li class="start-light"></li>
+                                        <li class="start-light"></li>
+                                        <li class="start-light"></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="grate-desc">
+                                Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+                                default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                                their infancy. Various versions have evolved over the years, sometimes by accident,
+                                sometimes on purpose (injected humour and the like).
+                            </div>
+                        </div>
+                        <div class="grate-item">
+                            <div class="grate-title">
+                                <div class="box1">
+                                    <h4>DON’T LIKE IT</h4>
+                                </div>
+                                <div class="box2">By <span class="text-bold">Mary Jane</span></div>
+                                <div class="box3">
+                                    <p>October 21st, 2014</p>
+                                    <ul class="start-icon">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="grate-desc">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="socails-like">
+                    <div class="socail-icon">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                    <div class="like-fb"><img src="/template/img/product_detail/fb_icon.png" alt=""></div>
+                </div>
+            </div>
+            <div class="col-md-6 design">
+                <h2 class="title-h2">SPECIFICATION</h2>
+
+                <p class="p-design">
+                    <a href="#" class="education"># Education</a>
+                    <a href="#" class="education"># Entertaiment</a>
+                    <a href="#" class="education"># Lifestyle</a>
+                </p>
+
+                <div class="design-deail">
+                    <h6 class="title-h6">Tại sao Dash là một sự lựa chọn hoàn hảo:  </h6>
+
+                    <div class="special-desc">
+                        <P>- Ống bọc silicone có các kích thước khác nhau có thể lựa chọn để phù hợp với tai của bạn</p>
+
+                        <p>- Không có cáp</p>
+
+                        <p>- Trọng lượng nhẹ – ít hơn 13,8 gram.</p>
+
+                        <p>- Thiết kế công thái</p>
+
+                        <p>- Ba điểm an toàn, vừa vặn, phù hợp</p>
+
+                        <p class="note">Về thông số kỹ thuật, tai nghe có một băng thông đáp ứng 20-20,000 Hz, định dạng
+                            âm thanh nổi 16-bit, đầu ra 10mW RMS với giới hạn cấp độ, và nhỏ hơn 2% tổng méo hài hòa
+                            (1KHz, 1mW ). Dự kiến pin có thể sử dụng tới 3 giờ vừa chơi nhạc và theo dõi hoặc 4 giờ chơi
+                            nhạc, với thời gian sạc pin ít hơn 1 giờ. Dash có thể được sạc bằng cáp USB hoặc thiết bị
+                            tiếp hợp DC. Dash cung cấp khả năng tương thích với một loạt các thiết bị hỗ trợ Bluetooth –
+                            iPhone (4S trở đi); iPad (thế hệ thứ 3 trở đi) và các thiết bị Android với phần cứng
+                            Bluetooth LE dưới 4.3 Jelly Bean hoặc sau đó. Tuy nhiên, chỉ tồn tại hỗ trợ giới hạn cho
+                            Windows Phone và Blackberry. Trong khi đó, iOS miễn phí và các ứng dụng Android sẽ có mặt
+                            tại buổi ra mắt của Dash và các nhà phát triển sẽ có thể đặt hàng một bộ phát triển phần mềm
+                            để có được quyền truy cập vào các tin tức dữ liệu được xử lý và chưa được xử lý.</p>
+                    </div>
+                    <div class="desgin-dropdown">
+                        <div class="left-box">
+                            <div class="add-crush">+ Add To My Crush</div>
+                            <div class="size">
+                                <div class="u-select">
+                                    <input type="text" class="u-value" value="Size"/>
+                                    <i class="fa fa-angle-down"></i>
+                                    <ul>
+                                        <li value="2">i</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="color">
+                                <div class="u-select">
+                                    <input type="text" class="u-value" value="Color"/>
+                                    <i class="fa fa-angle-down"></i>
+                                    <ul>
+                                        <li value="2">3</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="quanlity">
+                                <div class="u-select">
+                                    <input type="text" class="u-value" value="quanlity"/>
+                                    <i class="fa fa-angle-down"></i>
+                                    <ul>
+                                        <li value="3">3</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-box">
+                            <p class="price">$240.00</p>
+                            <a href="#" class="checkout">Pre-Order</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END-->
+<!-- WORTH THE MONEY-->
+<div class="work-the-money" id="sendo">
+    <div class="container">
+        <div class="top-time-rate">
+            <div class="time-rate">
+                <h2 class="title-h2">05</h2>
+
+                <p>05/05</p>
+            </div>
+
+        </div>
+        <div class="product-content">
+            <div id="work-money" class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="row">
+                        <div class="col-md-12"><img src="/template/img/product_detail/slide1.jpg" data-thumb="/template/img/product_detail/thumb1.jpg"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row">
+                        <div class="col-md-12"><img src="/template/img/product_detail/slide1.jpg" data-thumb="/template/img/product_detail/thumb2.jpg"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row">
+                        <div class="col-md-12"><img src="/template/img/product_detail/slide1.jpg" data-thumb="/template/img/product_detail/thumb3.jpg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END WORTH THE MONEY-->
+<!-- SELL OFF-->
+<div class="the-best-deal" id="related-product">
+<div class="container">
+    <div class="title-product">
+        <h2 class="">RELATED PRODUCTS</h2>
+    </div>
+    <div class="product-content">
+        <ul id="da-thumbs" class="row da-thumbs">
+            <li class="col-md-3 deal-item">
+                <a href="#">
+                    <img src="/template/img/product_detail/pro1.jpg" alt="">
+
+                    <div class="da-overflow"></div>
+                </a>
+                <h5>Belkin High-Speed</h5>
+                <section class="deal-pirce">
+                    <p class="left-deal"><span class="price">$ 320.00</span></p>
+
+                    <p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+                </section>
+            </li>
+            <li class="col-md-3 deal-item">
+                <a href="#">
+                    <img src="/template/img/product_detail/pro2.jpg" alt="">
+
+                    <div class="da-overflow"></div>
+                </a>
+                <h5>Plantronics</h5>
+                <section class="deal-pirce">
+                    <p class="left-deal"><span class="price">$ 140.00</span></p>
+
+                    <p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+                </section>
+            </li>
+            <li class="col-md-3 deal-item">
+                <a href="#">
+                    <img src="/template/img/product_detail/pro3.jpg" alt="">
+
+                    <div class="da-overflow"></div>
+                </a>
+                <h5>Escort SmartRadar</h5>
+                <section class="deal-pirce">
+                    <p class="left-deal"><span class="price">$ 230.00</span></p>
+
+                    <p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+                </section>
+            </li>
+            <li class="col-md-3 deal-item">
+                <a href="#">
+                    <img src="/template/img/product_detail/pro4.jpg" alt="">
+
+                    <div class="da-overflow"></div>
+                </a>
+                <h5>Powerbeats</h5>
+                <section class="deal-pirce">
+                    <p class="left-deal"><span class="price">$ 320.00</span></p>
+
+                    <p class="right-deal"><a href="#" class="shop-now">shop now</a></p>
+                </section>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div class="bottom-page">
+    <div class="container">
+        <div class="contact-break">
+            <ul class="breadcrum">
+                <li><a href="#">Cyclonize</a><span>/</span></li>
+                <li><a href="#">Shop</a><span>/</span></li>
+                <li><a href="#">New Arrival</a><span>/</span></li>
+                <li class="active"><a href="#">Dash</a></li>
+            </ul>
+            <p class="need-help">Need help?</p>
+
+            <p class="contact-us">CONTACT US</p>
+        </div>
+
+        <div class="box shop">
+            <h5>SHOP</h5>
+            <ul class="ul-box">
+                <li class="active"><a href="#">New Arrival</a></li>
+                <li><a href="#">The Best Deal</a></li>
+                <li><a href="#">Best Selling Items</a></li>
+                <li><a href="#">Worth The Money</a></li>
+                <li><a href="#">Sale Off</a></li>
+            </ul>
+        </div>
+        <div class="box category">
+            <h5>CATEGORY</h5>
+            <ul class="ul-box">
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Education</a></li>
+                <li class="active"><a href="#">Entertaiment</a></li>
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Lifestyle</a></li>
+            </ul>
+        </div>
+        <div class="box shop">
+            <h5>FAQ</h5>
+            <ul class="ul-box">
+                <li class="active"><a href="#">Warranty</a></li>
+                <li><a href="#">Delivery</a></li>
+                <li><a href="#">Return/Refund</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms Of Service</a></li>
+            </ul>
+        </div>
+        <div class="box" id="history">
+            <ul class="ul-box">
+                <li><a href="#">History</a></li>
+                <li class="active"><a href="#">Long-term program</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+{#<div class="row">#}
+{#<div class="col-md-3">#}
+{#<a href="{{ path(product) }}" class="thumbnail">#}
+{#<img src="{{ product.image ? product.image.path|imagine_filter('sylius_medium') : 'http://placehold.it/200x200' }}" alt="{{ product.name }}" />#}
+{#</a>#}
+{#</div>#}
+{#<div class="col-md-9">#}
+{#<a href="{{ path(product) }}" class="btn btn-link"><h3>{{ product.name }}</h3></a>#}
+{#<p>{{ product.shortDescription|default('sylius.product.no_description')|trans|raw }}</p>#}
+{#</div>#}
+{#</div>#}
+{#{% if product.images|length > 0 %}#}
+{#<hr>#}
+{#<div id="gallery">#}
+{#{% for image in product.images %}#}
+{#<a href="{{ image.path|imagine_filter('sylius_large') }}" title="{{ product.name }}">#}
+{#<img class="img-rounded" src="{{ image.path|imagine_filter('sylius_small') }}" alt="{{ product.name }}" />#}
+{#</a>#}
+{#{% endfor %}#}
+{#</div>#}
+{#{% endif %}#}
+{#<hr>#}
+{#<div class="row">#}
+{#<div class="col-md-6">#}
+{#{% if product.attributes|length > 0 %}#}
+{#<table class="table table-condensed">#}
+{#<thead>#}
+{#<tr>#}
+{#<th colspan="2">{{ 'sylius.product.attributes'|trans }}</th>#}
+{#</tr>#}
+{#</thead>#}
+{#<tbody>#}
+{#{% for attribute in product.attributes %}#}
+{#<tr>#}
+{#<td>{{ attribute.presentation }}</td>#}
+{#<td>{{ attribute.value }}</td>#}
+{#</tr>#}
+{#{% endfor %}#}
+{#</tbody>#}
+{#</table>#}
+{#{% endif %}#}
+{#</div>#}
+{#<div class="col-md-6">#}
+{#<h4>{{ 'sylius.product.description'|trans }}</h4>#}
+{#<p>{{ product.description|default('sylius.product.no_description')|trans|raw }}</p>#}
+{#</div>#}
+{#</div>#}
+{#<hr>#}
+{#<div class="row">#}
+{#<form action="{{ path('sylius_cart_item_add', {'id': product.id}) }}" method="post" class="clearfix form-horizontal">#}
+{#{% if product.hasVariants %}#}
+{#<div class="col-md-6">#}
+{#{% if product.isVariantSelectionMethodChoice %}#}
+{#<table class="table table-condensed">#}
+{#<thead>#}
+{#<tr>#}
+{#<th></th>#}
+{#<th>{{ 'sylius.variant.price'|trans }}</th>#}
+{#<th></th>#}
+{#</tr>#}
+{#</thead>#}
+{#<tbody>#}
+{#{% for variant in product.variants if variant.available %}#}
+{#<tr>#}
+{#<td>#}
+{#{% if variant.presentation is empty %}#}
+{#<ul class="unstyled">#}
+{#{% for option in variant.options %}#}
+{#<li><strong>{{ option.presentation }}</strong>: {{ option.value }}</li>#}
+{#{% endfor %}#}
+{#</ul>#}
+{#{% else %}#}
+{#{{ variant.presentation }}#}
+{#{% endif %}#}
+{#</td>#}
+{#<td>#}
+{#<span class="label label-success">{{ sylius_calculate_price(variant)|sylius_price }}</span>#}
+{#</td>#}
+{#<td>#}
+{#{% if sylius_inventory_is_available(variant) %}#}
+{#{{ form_widget(form.variant[loop.index0]) }}#}
+{#{% else %}#}
+{#<span class="label label-warning">{{ 'sylius.out_of_stock'|trans }}</span>#}
+{#{% endif %}#}
+{#</td>#}
+{#</tr>#}
+{#{% endfor %}#}
+{#</tbody>#}
+{#</table>#}
+{#{% else %}#}
+{#<div class="well clearfix">#}
+{#{{ form_widget(form.variant) }}#}
+{#</div>#}
+{#{% endif %}#}
+{#</div>#}
+{#{% endif %}#}
+{#<div class="col-md-6 pull-right">#}
+{#{% if not product.hasVariants and not sylius_inventory_is_available(product.masterVariant) %}#}
+{#<span class="label label-warning">{{ 'sylius.out_of_stock'|trans }}</span>#}
+{#{% else %}#}
+{#{{ form_row(form.quantity, {'attr': {'class': 'center-text'}, 'empty_value': '1'}) }}#}
+{#{{ form_widget(form._token) }}#}
+{#<br>#}
+{#<br>#}
+{#{% if sylius_is_restricted(product) %}#}
+{#<button disabled="disabled" class="btn btn-success btn-lg btn-block"><i class="icon-shopping-cart icon-white icon-large"></i> {{ 'sylius.product_not_available_in_zone'|trans }}</button>#}
+{#{% else %}#}
+{#<button type="submit" class="btn btn-success btn-lg btn-block"><i class="icon-shopping-cart icon-white icon-large"></i> {{ 'sylius.add_to_cart'|trans }}</button>#}
+{#{% endif %}#}
+{#{% endif %}#}
+{#</div>#}
+{#</form>#}
+{#</div>#}
+{% endblock %}
+{% block maincss %}
+    <!-- // Main stylesheet -->
+    <link rel="stylesheet"
+          href="http://fonts.googleapis.com/css?family=Roboto:400,100,700&amp;subset=latin,vietnamese,latin-ext">
+    {% stylesheets output='bundles/cyclonizestore/css/main-compress.css' filter='cssrewrite'
+    'bundles/cyclonizestore/css/main.css'
+    'bundles/cyclonizestore/css/style.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+    {% endstylesheets %}
+{% endblock %}
+{% block extendjavascript %}
+<!-- Include js plugin -->
+{% javascripts output='assets/compiled/shop-detail.js'
+'bundles/cyclonizestore/js/owl.carousel.js'
+'bundles/cyclonizestore/js/jquery.Scrollto.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+<script type="text/javascript">
+    function onScroll(event) {
+        var scrollPos = $(document).scrollTop();
+        var menuFloatPos = $('.tab-products').position().top + $('.tab-products').height();
+        if (scrollPos >= menuFloatPos) {
+            $('.tab-products').css({position: 'fixed'});
+        } else {
+            $('.tab-products').css({position: 'relative'});
+            return;
+        }
+        $('.tab-products a').each(function () {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('.tab-products ul li').removeClass("active");
+                currLink.parents('li').addClass("active");
+            }
+            else {
+                currLink.parents('li').removeClass("active");
+            }
+        });
+    }
+    $(document).ready(function () {
+        $(document).on("scroll", onScroll);
+
+        owl = $("#s-video").owlCarousel({
+            singleItem: false,
+            items: 4, //10 items above 1000px browser width
+            itemsDesktop: [1000, 5], //5 items between 1000px and 901px
+            itemsDesktopSmall: [900, 3], // betweem 900px and 601px
+            itemsTablet: [600, 2], //2 items between 600 and 0
+            itemsMobile: false,
+            navigation : false,
+            afterInit: afterOWLinit
+        });
+        function afterOWLinit() {
+
+            console.log('calling')
+            // set Custom event for NEXT custom control
+            $("#next2").click(function () {
+                owl.trigger('owl.next');
+            });
+
+            // set Custom event for PREV custom control
+            $("#prev2").click(function () {
+                owl.trigger('owl.prev');
+            });
+        }
+
+
+        gallery = $("#work-money");
+
+        gallery.owlCarousel({
+            navigation: false, // Show next and prev buttons
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            singleItem: true,
+            afterInit: initGalleryDesign // do some work after OWL init
+        });
+
+
+        function initGalleryDesign() {
+
+            $('.work-the-money .owl-controls .owl-page').append('<a class="item-link"></a>');
+
+            var pafinatorsLink = $('.work-the-money .owl-controls .item-link');
+
+            /**
+             * this.owl.userItems - it's your HTML <div class="item"><img src="http://www.ow...t of us"></div>
+             */
+            $.each(this.owl.userItems, function (j) {
+                console.log($(this).find('img').attr('data-thumb') )
+                $(pafinatorsLink[j])
+                        .click(function () {gallery.trigger('owl.goTo', j);})
+                        .append('<img src="' + $(this).find('img').attr('data-thumb') + '" style="width:100px;height:80px"><div class="da-overflow"></div>');
+
+            });
+            $('.work-the-money .owl-pagination .owl-page').each(function () {
+                $(this).hoverdir();
+            })
+        }
+
+        //scroll div
+        $("#boxscroll").niceScroll({
+            touchbehavior: false,
+            cursorcolor: "#00F",
+            cursoropacitymax: 0.7,
+            cursorwidth: 11,
+            cursorborder: "1px solid #000",
+            cursorborderradius: "8px",
+            background: "#ccc",
+            autohidemode: "scroll"
+        }).cursor.css({"background": "#000"});
+    })
+</script>
+{% endblock %}

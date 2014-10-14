@@ -1,0 +1,26 @@
+<div class="best-sell" id="best-sell">
+    <div class="container">
+        <div class="title-product">
+            <h2>{{ taxon.getName }}</h2>
+            <a href="{{ path(taxon) }}" title="{{ taxon.getName }}" class="view-more">view more</a>
+        </div>
+        <div class="product-content">
+            <div class="row">
+                {% for product in products %}
+                <div class="col-md-6">
+                    <div class="left-sell">
+                        <img src="{{ product.image ? product.image.path|imagine_filter('cyclonize_medium') : 'http://placehold.it/200x200' }}" alt="{{ product.name }}"/>
+                    </div>
+                    <div class="right-sell">
+                        <h5>{{ product.name }}</h5>
+
+                        <p class="sell-desc">{{ product.shortDescription|default('sylius.product.no_description'|trans)|raw }}
+                        </p>
+                        <a href="{{ path(product) }}" title="{{ product.name }}" class="shop-now">shop now</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,139 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% block doucmentid %}{% endblock %}
+{% block content %}
+    {#<div class="page-header">#}
+    {#<h1>{{ 'sylius.checkout.security.header'|trans|raw }}</h1>#}
+    {#</div>#}
+
+    {#{% include 'SyliusWebBundle:Frontend/Checkout:_progressBar.html.twig' %}#}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+                <div class="page-header">
+                    <h1>{{ 'SIGN IN' | trans }}</h1>
+                </div>
+                <!-- /.page-header -->
+
+                <div class="login-social">
+                    <button class="btn btn-lg btn-facebook">
+                        <i class="fa fa-facebook-square"></i>
+                        <span>{{ 'Continue with Facebook' | trans }}</span>
+                    </button>
+                </div>
+                <!-- /.login-social -->
+
+                <hr class="hr left">
+
+                <form action="{{ path('fos_user_security_check') }}" method="post" class="form-horizontal form-sigin"
+                      role="form">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Email</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" id="username" name="_username" class="form-control"/>
+                        </div>
+                    </div>
+                    <!-- /.login-social -->
+
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">{{ 'Password' | trans }}</label>
+
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" name="_password"
+                                   placeholder="Password">
+                        </div>
+                    </div>
+                    <!-- /.login-social -->
+
+                    <div class="clearfix">
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-primary upper">
+                                <span>{{ 'Sign In' | trans }}</span>
+                            </button>
+                        </div>
+                        <!-- /.pull-right -->
+
+                        {#<div class="checkbox pull-left">#}
+                        {#<label for="remember">#}
+                        {#<input type="checkbox" id="remember" name="remember" checked="" value="1">#}
+                        {#<span class="upper">Keep me sign in</span>#}
+                        {#</label>#}
+                        {#</div><!-- /.checkbox -->#}
+                    </div>
+                </form>
+                <!-- /.form-signin -->
+
+                <hr class="hr left">
+
+                <form action="{{ path('fos_user_resetting_send_email') }}" method="POST"
+                      class="form-horizontal form-forgot-password" role="form">
+                    <strong class="message">
+                        <span>{{ 'Forgot your password? Please enter your email address bellow.' | trans }}</span>
+                        <span>{{ 'Your will receive a link to reset your password.' | trans }}</span>
+                    </strong><!-- /.message -->
+
+                    <div class="form-group">
+                        <label for="forgot-email" class="col-sm-2 control-label">Email</label>
+
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="username" name="username" placeholder="Email">
+                        </div>
+                    </div>
+                    <!-- /.message -->
+
+                    <div class="clearfix">
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-primary upper">
+                                <span>{{ 'Submit' | trans }}</span>
+                            </button>
+                        </div>
+                        <!-- /.pull-right -->
+
+                        <div class="align pull-left">
+                            <a href="register.html" class="upper underline" onclick="showRegister()">
+                                <span>{{ 'You don\'t have account? Create now!' | trans }}</span>
+                            </a>
+                        </div>
+                        <!-- /.pull-left -->
+
+                    </div>
+                    <!-- /.message -->
+                </form>
+                <!-- /.form-forgot-password -->
+
+                <form action="{{ path('sylius_checkout_forward', {'stepName': context.currentStep.name}) }}"
+                      method="post" novalidate class="form-horizontal hide form-register">
+
+                    <div class="page-header">
+                        <h1>{{ 'Create New Account' | trans }}</h1>
+                    </div>
+                    <fieldset>
+                        <legend>{{ 'sylius.checkout.security.new_customer'|trans }}</legend>
+                        {{ form_widget(registration_form) }}
+                    </fieldset>
+                    <div class="clearfix">
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-primary upper">
+                                <span>{{ 'Register' | trans }}</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container -->
+
+{% endblock %}
+
+{% block extendjavascript %}
+<script>
+    function showRegister(){
+        $('#form-signin,#form-forgot-password').hide();
+        $('#form-register').show();
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,196 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% import 'SyliusWebBundle:Frontend/Macros:alerts.html.twig' as alerts %}
+{% block doucmentid %}{% endblock %}
+{% form_theme form _self %}
+    {% block stylesheets %}
+        {% stylesheets output='bundles/cyclonizestore/css/cart-compress.css' filter='cssrewrite'
+        'bundles/cyclonizestore/css/style.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+        {% endstylesheets %}
+    {% endblock %}
+{% block content %}
+    <div id="my-cart">
+        <div class="container">
+            {{ form_errors(form) }}
+            <form name="checkout-frm" class="checkout-frm row" method="POST" action="{{ path('sylius_cart_save') }}">
+                <div class="col-md-9">
+                    <div class="cart-wrap">
+                        <h2 class="title-h2">Items in your cart</h2>
+                        {% set subTotal = 0 %}
+                        {% for item in cart.items %}
+                            {% include 'SyliusWebBundle:Frontend/Cart:_item.html.twig' %}
+                            {% set subTotal = subTotal + item.total %}
+                            {% if loop.last %}
+                                <div class="cart-total">
+                                    <div class="left-total"><a href="{{ path('shop_detail') }}"
+                                                               class="continue-shop">{{ 'Continue Shopping' | trans }}</a>&nbsp;<a
+                                                href="{{ path('sylius_checkout_start') }}" class="continue-shop"><i
+                                                    class="icon-shopping-cart"></i> {{ 'Checkout'|trans }}</a></div>
+                                    <div class="right-total">
+                                        <p class="small-text">{{ 'Subtotal' | trans }}</p>
+
+                                        <p class="big-price">{{ subTotal | sylius_price }}</p>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="title-h2">summary</h2>
+
+                    <div class="total-shipping">
+                        <p class="sub-total">
+                            <span>{{ 'Subtotal' | trans }}</span><span>{{ subTotal | sylius_price }}</span></p>
+                        {% if cart.promotionTotal %}
+                            <p class="sub-total"><span>{{ 'Promotion' | trans }}</span><span> {{ cart.promotionTotal|sylius_price }}</span></p>
+                        {% endif %}
+                        <p class="shipping">
+                            <span>{{ 'Shipping' | trans }}</span><span>{{ cart.shippingTotal|sylius_price }}</span></p>
+
+                        <p class="sub-total">
+                            <span>{{ 'Tax' | trans }}</span><span>{{ cart.taxTotal|sylius_price }}</span></p>
+
+                        <div class="promo-code">
+
+                            {{ form_widget(form.promotionCoupon, {'label_attr': {'class': 'col-lg-12'}, 'attr': { 'placeholder': 'Coupon Code', 'class':'text-field' }}
+                            ) }}
+                            {#<input type="text" name="promocode" value="" placeholder="Type your promo code here"#}
+                            {#class="text-field"/>#}
+                            <a href="#" class="apply">APPLY</a>
+                        </div>
+                        <p class="total">
+                            <span>TOTAL</span>
+                            <span>{{ cart.total|sylius_price }}</span>
+                        </p>
+                    </div>
+                    {#<div class="acccount">#}
+                    {#<p class="an-acccount"><span>Already have an account?</span><span><input type="radio" name="ac-radio"/></span>#}
+                    {#</p>#}
+                    {#<input type="text" class="email text-field" placeholder="Your Email Address"/>#}
+                    {#<input type="password" class="password text-field" placeholder="Your Password"/>#}
+
+                    {#<div class="gues-checkout">#}
+                    {#<p><span>GUEST CHECKOUT</span><span><input type="radio" name="ac-radio"#}
+                    {#checked="true"/></span></p>#}
+
+                    {#<p class="account-later">Continue checkout and create my account later.</p>#}
+                    {#<input type="submit" name="submit" value="CHECK OUT"/ class="checkout">#}
+                    {#</div>#}
+                    {#</div>#}
+                    {{ form_rest(form) }}
+                </div>
+            </form>
+        </div>
+    </div>
+    {#<div class="page-header">#}
+    {#<h1>{{ 'sylius.cart.summary_header'|trans|raw }}</h1>#}
+    {#</div>#}
+
+    {#{% if not cart.empty %}#}
+    {#{{ form_errors(form) }}#}
+
+    {#<form action="{{ path('sylius_cart_save') }}" method="post" novalidate>#}
+    {#<table class="table">#}
+    {#<thead>#}
+    {#<tr>#}
+    {#<th>#</th>#}
+    {#<th>{{ 'sylius.cart.summary.product'|trans }}</th>#}
+    {#<th>{{ 'sylius.cart.summary.quantity'|trans }}</th>#}
+    {#<th></th>#}
+    {#<th>{{ 'sylius.cart.summary.unit_price'|trans }}</th>#}
+    {#<th style="text-align: right;">{{ 'sylius.cart.summary.total'|trans }}</th>#}
+    {#</tr>#}
+    {#</thead>#}
+    {#<tbody>#}
+    {#{% for item in cart.items %}#}
+    {#{% include 'SyliusWebBundle:Frontend/Cart:_item.html.twig' %}#}
+    {#{% endfor %}#}
+    {#</tbody>#}
+    {#<tfoot>#}
+    {#{% if cart.promotionTotal %}#}
+    {#<tr>#}
+    {#<td colspan="6" style="text-align: right;">#}
+    {#<strong>{{ 'sylius.order.promotion_total'|trans }}</strong>: {{ cart.promotionTotal|sylius_price }}#}
+    {#</td>#}
+    {#</tr>#}
+    {#{% endif %}#}
+    {#<tr>#}
+    {#<td colspan="6" style="text-align: right;">#}
+    {#<strong>{{ 'sylius.order.shipping_total'|trans }}</strong>: {{ cart.shippingTotal|sylius_price }}#}
+    {#</td>#}
+    {#</tr>#}
+    {#<tr>#}
+    {#<td colspan="4">#}
+    {#<p><strong>{{ 'sylius.order.taxes'|trans }}</strong></p>#}
+    {#<ul>#}
+    {#{% for taxAdjustment in cart.taxAdjustments %}#}
+    {#<li>{{ taxAdjustment.description }} {{ taxAdjustment.amount|sylius_price }} </li>#}
+    {#{% else %}#}
+    {#<li><span class="label label-info">{{ 'sylius.order.no_taxes'|trans }}</span></li>#}
+    {#{% endfor %}#}
+    {#</ul>#}
+    {#</td>#}
+    {#<td colspan="2" style="text-align: right;">#}
+    {#<strong>{{ 'sylius.order.tax_total'|trans }}</strong>: {{ cart.taxTotal|sylius_price }}#}
+    {#</td>#}
+    {#</tr>#}
+    {#<tr>#}
+    {#<td colspan="6" style="text-align: right;">#}
+    {#<strong>{{ 'sylius.cart.summary.grand_total'|trans }}</strong>: {{ cart.total|sylius_price }}#}
+    {#</td>#}
+    {#</tr>#}
+    {#</tfoot>#}
+    {#</table>#}
+
+    {#<div class="well well-sm">#}
+    {#{{ form_row(form.promotionCoupon, {'label_attr': {'class': 'col-lg-12'}}) }}#}
+    {#<button type="submit" class="btn btn-primary btn-sm">{{ 'sylius.cart.summary.add_coupon'|trans }}</button>#}
+    {#</div>#}
+
+    {#{{ form_rest(form) }}#}
+    {#<div class="well">#}
+    {#<button type="submit" class="btn btn-primary btn-lg"><i class="icon-save"></i> {{ 'sylius.cart.summary.save'|trans }}</button>#}
+    {#<div class="pull-right">#}
+    {#<a href="{{ path('sylius_checkout_start') }}" class="btn btn-success btn-lg"><i class="icon-shopping-cart"></i> {{ 'sylius.cart.summary.checkout'|trans }}</a>#}
+    {#<a href="{{ path('sylius_cart_clear') }}" class="btn btn-danger btn-lg"><i class="icon-remove"></i> {{ 'sylius.cart.summary.clear'|trans }}</a>#}
+    {#</div>#}
+    {#</div>#}
+    {#</form>#}
+    {#{% else %}#}
+    {#{{ alerts.info('sylius.cart.empty'|trans) }}#}
+    {#{% endif %}#}
+
+{% endblock %}
+
+{% block sylius_cart_item_row %}
+    {{ parent() }}
+    {% block form_message %}{% endblock %}
+{% endblock %}
+{% block extendjavascript %}
+    <script>
+        $(document).ready(function () {
+            $(".quanlity-wrap .fa-angle-up").click(function () {
+                var quanlity = parseInt($(this).parents(".quanlity-wrap").find(".quanlity").val());
+                $(this).parents(".quanlity-wrap").find(".quanlity").val(quanlity + 1);
+            });
+            $(".quanlity-wrap .fa-angle-down").click(function () {
+                var quanlity = parseInt($(this).parents(".quanlity-wrap").find(".quanlity").val());
+                if (quanlity < 1)
+                    $(this).parents(".quanlity-wrap").find(".quanlity").val(0);
+                else
+                    $(this).parents(".quanlity-wrap").find(".quanlity").val(quanlity - 1);
+            });
+            $(".quanlity").change(function () {
+                var quanlity = $(this).val();
+                if (isNaN(quanlity)) {
+                    alert("Quanlity is number");
+                    $(this).val(0);
+                }
+                if (quanlity < 1)
+                    $(this).val(0);
+            });
+        });
+    </script>
+{% endblock %}

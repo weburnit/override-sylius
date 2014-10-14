@@ -1,0 +1,224 @@
+<!doctype html>
+{% set settings = sylius_settings_all('general') %}
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+            {{ settings.title|default('sylius.meta.frontend_title'|trans) }}
+        {% endblock %}
+    </title>
+
+    <!-- // Meta -->
+
+    <meta name="description" content="{{ settings.meta_description|default('sylius.meta.frontend_description'|trans) }}">
+    <meta name="keywords" content="{{ settings.meta_keywords|default('sylius.meta.frontend_keywords'|trans) }}">
+{% block maincss %}
+    <!-- // Main stylesheet -->
+    <link rel="stylesheet"
+          href="http://fonts.googleapis.com/css?family=Roboto:400,100,700&amp;subset=latin,vietnamese,latin-ext">
+    {% stylesheets output='bundles/cyclonizestore/css/main-compress.css' filter='cssrewrite'
+    'bundles/cyclonizestore/css/main.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+    {% endblock %}
+    {% block stylesheets %}
+    {% endblock %}
+    <!-- // Modernizr and jQuery -->
+    <script src="{{ asset("bundles/cyclonizestore/js/vendor/modernizr-2.6.2.min.js") }}"></script>
+    <style type="text/css">
+        #home .carousel-control {
+            z-index: 10000;
+            position: absolute;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .slide-img {
+            position: absolute;
+            top: 11%;
+            left: 0;
+            z-index: 100;
+        }
+
+        .slide-img img {
+            width: 100%
+        }
+
+        .side-info {
+            position: relative;
+            z-index: 300;
+        }
+
+        @media screen and (max-width: 768px) {
+            .slide-img {
+                top: 32% !important;
+                left: -2% !important;
+                width: 73%;
+            }
+        }
+
+        @media screen and (max-width: 736px) {
+            .slide-img {
+                top: 33% !important;
+                left: 0% !important;
+                width: 70%;
+            }
+        }
+
+        @media screen and (max-width: 667px) {
+            .slide-img {
+                top: 34% !important;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .slide-img {
+                top: 36% !important;
+                left: 15% !important;
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 568px) {
+            .slide-img {
+                top: 38% !important;
+            }
+        }
+
+        @media screen and (max-width: 414px) {
+            #home #home-featured h1, #home .home-video h1, #home #home-featured h1 a, #home .home-video h1 a {
+                font-size: 35px !important;
+                margin-top: 100px !important;
+            }
+
+            .slide-img {
+                top: 42% !important;
+                left: 0% !important;
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            .slide-img {
+                top: 45% !important;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .slide-img {
+                top: 47% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="{% block doucmentid %}home{% endblock %}">
+    {% block header %}
+        {{ render_esi(controller("CyclonizeStoreBundle:Default:renderTopMenu")) }}
+        {#<div class="currency-menu masthead pull-right">#}
+        {#{{ knp_menu_render('sylius.frontend.currency', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}#}
+        {#</div>#}
+        {#<h1 class="logo"><a href="{{ path('sylius_homepage') }}" title="{{ 'sylius.logo'|trans }}"><span>{{ 'sylius.logo'|trans }}</span></a></h1>#}
+    {% endblock %}
+
+
+    <main>
+        {% block content -%}
+            {{ render_esi(controller("CyclonizeStoreBundle:Default:renderHomePageSlider")) }}
+        {% endblock %}
+        <!-- /#home-carousel -->
+
+    </main>
+    <!-- /main -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-6">
+                    <p>Copyright &copy; 2014 Cyclonize Inc. All rights reserved.</p>
+
+                    <p>Designed by Bratus Agency</p>
+
+                    <p></p>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <form action="#" method="POST" class="form-online" id="subscribe-newsletter-form">
+                        <div class="row">
+                            <div class="col-md-8 col-xs-8 col-sm-8 email-wrapper">
+                                <input type="email" class="form-control input-sm"
+                                       placeholder="Enter your email for our newsletter">
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4 ">
+                                <button type="submit" class="btn btn-block btn-primary btn-sm">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- /#subscribe-newsletter-form -->
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+                    <nav class="social">
+                        <a href="#" data-toogle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" data-toogle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" data-toogle="tooltip" title="Google+"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" data-toogle="tooltip" title="Youtube"><i class="fa fa-youtube"></i></a>
+                        <a href="#" data-toogle="tooltip" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+                        <a href="#" data-toogle="tooltip" title="Instagram"><i class="fa fa-instagram"></i></a>
+                    </nav>
+                    <!-- /.social -->
+                </div>
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+
+        <!-- // DEMO ONLY -->
+        <div id="subscribe-successfully" class="white-popup mfp-hide">
+            <div class="subscribe-wrapper">
+                <h2 class="upper subscribe-heading">Subscribe <br> Successfully</h2>
+
+                <p>We send you the best designs a couple times a month (NO SPAM). <br> You can unsubscribe any time.</p>
+
+                <hr class="hr">
+
+                <a href="#" class="btn btn-primary upper">Go shopping now</a>
+            </div>
+        </div>
+        <!-- /#subscribe-successfully -->
+
+    </footer>
+    <!-- /footer -->
+</div>
+<!-- // Scripts -->
+{% block javascripts %}
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    {% javascripts output='assets/compiled/frontend-main.js'
+    'bundles/cyclonizestore/js/bootstrap.js'
+    'bundles/cyclonizestore/js/jquery.hoverdir.js'
+    'bundles/cyclonizestore/js/plugins.js'
+    'bundles/cyclonizestore/js/main.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block extendjavascript %}
+
+{% endblock %}
+</body>
+</html>
